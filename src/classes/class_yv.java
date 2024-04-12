@@ -12,6 +12,7 @@ import java.util.Vector;
 import javax.microedition.lcdui.Graphics;
 
 import game.GameMidlet;
+import utility.HttpUtils;
 
 public final class class_yv extends class_aae {
 
@@ -89,12 +90,12 @@ public final class class_yv extends class_aae {
 				localVector = new Vector();
 				localVector.addElement(new class_s("Global", new IAction() {
 					public void perform() {
-						fetchServers("http://kpahteamobi.000webhostapp.com/servers.php?sv=global");
+						fetchServers("https://kpahteamobi.000webhostapp.com/servers.php?sv=global");
 					}
 				}));
 				localVector.addElement(new class_s("KPAH2", new IAction() {
 					public void perform() {
-						fetchServers("http://kpahteamobi.000webhostapp.com/servers.php?sv=kpah2");
+						fetchServers("https://kpahteamobi.000webhostapp.com/servers.php?sv=kpah2");
 					}
 				}));
 				class_acv.u.a(localVector, 0);
@@ -138,10 +139,11 @@ public final class class_yv extends class_aae {
 	private void fetchServers(String url) {
 		class_acv.h();
 		final String a;
-		if ((a = GameMidlet.a(url)) == null) {
+		if ((a = HttpUtils.getResponse(url)) == null) {
 			class_acv.a("Không thể kết nối, xin kiểm tra lại GPRS/3G/Wifi.");
 			return;
 		}
+		System.out.println("response: " + a);
 		final String[] a2;
 		class_yv.b = new String[(a2 = class_d.a(a, ",")).length];
 		class_yv.e = new String[a2.length];
