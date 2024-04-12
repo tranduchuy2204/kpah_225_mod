@@ -39,10 +39,10 @@
 		          destdir="mtj-build/DefaultColorPhone/KPAH_255_MOD/bin/"
 		          encoding="UTF-8"
 		          preverify="false"
-		          executable="${java.executable}"
-		          fork="true"
 		          source="1.3"
 		          sourcepath=""
+		          executable="${java.executable}"
+		          fork="true"
 		          srcdir="mtj-build/DefaultColorPhone/KPAH_255_MOD/classes/" />
 	</target>
 	<target depends="build-DefaultColorPhone" name="package-DefaultColorPhone">
@@ -50,7 +50,7 @@
 		            bootclasspath="C:\WTK2.5.2_01\lib\midpapi21.jar:C:\WTK2.5.2_01\lib\cldcapi11.jar:C:\WTK2.5.2_01\lib\wma20.jar:C:\WTK2.5.2_01\lib\mmapi.jar:C:\WTK2.5.2_01\lib\j2me-ws.jar:C:\WTK2.5.2_01\lib\j2me-xmlrpc.jar:C:\WTK2.5.2_01\lib\jsr75.jar:C:\WTK2.5.2_01\lib\jsr082.jar:C:\WTK2.5.2_01\lib\jsr184.jar:C:\WTK2.5.2_01\lib\jsr179.jar:C:\WTK2.5.2_01\lib\satsa-apdu.jar:C:\WTK2.5.2_01\lib\satsa-jcrmi.jar:C:\WTK2.5.2_01\lib\satsa-pki.jar:C:\WTK2.5.2_01\lib\satsa-crypto.jar:C:\WTK2.5.2_01\lib\jsr211.jar:C:\WTK2.5.2_01\lib\jsr238.jar:C:\WTK2.5.2_01\lib\jsr229.jar:C:\WTK2.5.2_01\lib\jsr180.jar:C:\WTK2.5.2_01\lib\jsr234.jar:C:\WTK2.5.2_01\lib\jsr226.jar:C:\WTK2.5.2_01\lib\jsr239.jar:C:\Users\Noverify\Desktop\AllEclipseVersion\Eclipse_12_2023\workspace\KPAH_255_MOD\libs\KPAH_225_remade.jar:"
 		            jadfile="deployed/DefaultColorPhone/KPAH_255_MOD.jad"
 		            jarfile="deployed/DefaultColorPhone/KPAH_225.jar"
-		            libclasspath=""
+		            libclasspath="C:\Users\Noverify\Desktop\AllEclipseVersion\Eclipse_12_2023\workspace\KPAH_255_MOD\libs\KPAH_225_remade.jar:"
 		            obfuscate="${do-obfuscate}"
 		            preverify="true">
 			<fileset dir="mtj-build/DefaultColorPhone/KPAH_255_MOD/bin/" />
