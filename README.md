@@ -1,8 +1,8 @@
 
 # Khi Phach Anh Hung 225
 
-- Đây là phiên bản game KPAH được phát hành bởi teamobi, và mình đã mod lại
-- Đây là mã nguồn mình đã viết phần basic, các bạn có thể clone về và mod thêm các chức năng theo yêu thích.
+- Đây là phiên bản game KPAH được phát hành bởi teamobi, đã được mod lại
+- Đây là mã nguồn mình đã viết phần core, các bạn có thể clone về và mod thêm các chức năng theo yêu thích.
 
 
 ## Tech
