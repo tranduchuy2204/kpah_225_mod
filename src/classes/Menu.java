@@ -284,9 +284,9 @@ public class Menu extends Debug {
 			choiceGroup.append("Chặn tất cả", null);
 			choiceGroup.append("Chặn thông báo được set", null);
 
-			choiceGroup.setSelectedIndex(ModScr.isBlockNoti, true);
+			choiceGroup.setSelectedIndex(ModScr.blockMode, true);
 			form.append(choiceGroup);
-			if (ModScr.isBlockNoti == 2) {
+			if (ModScr.blockMode == 2) {
 				form.append(textField);
 			}
 			form.append("Nội dung cần chặn được cách nhau bởi dấu , và không cần ghi dấu. Phiên bản sẽ tự nhận diện");
@@ -296,7 +296,7 @@ public class Menu extends Debug {
 				public void commandAction(Command c, Displayable d) {
 					if (c.getCommandType() == 4) {
 						ModScr.blockContent = VNCharacterUtils.removeAccent(textField.getString());
-						ModScr.isBlockNoti = (byte) choiceGroup.getSelectedIndex();
+						ModScr.blockMode = (byte) choiceGroup.getSelectedIndex();
 						ResUtils.saveRecordText("block_noti", ModScr.blockContent);
 					}
 					Display.getDisplay(game.GameMidlet.a).setCurrent(class_acv.a);

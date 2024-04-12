@@ -1,11 +1,27 @@
 package game;
 
-import classes.*;
+import java.io.IOException;
+import java.io.InputStream;
 
-import java.io.*;
-import javax.microedition.io.*;
-import javax.microedition.lcdui.*;
-import javax.microedition.midlet.*;
+import javax.microedition.io.ConnectionNotFoundException;
+import javax.microedition.io.Connector;
+import javax.microedition.io.ContentConnection;
+import javax.microedition.io.HttpConnection;
+import javax.microedition.io.InputConnection;
+import javax.microedition.lcdui.Display;
+import javax.microedition.lcdui.Displayable;
+import javax.microedition.midlet.MIDlet;
+
+import classes.AccountManager;
+import classes.IAction;
+import classes.ModScr;
+import classes.class_aco;
+import classes.class_acv;
+import classes.class_bi;
+import classes.class_go;
+import classes.class_ls;
+import classes.class_yi;
+import classes.class_yv;
 
 public class GameMidlet extends MIDlet {
 
@@ -37,21 +53,7 @@ public class GameMidlet extends MIDlet {
 		class_yi.S.f = true;
 	}
 
-	public static String read(DataInputStream dataInputStream) {
-		String text = "";
-		try {
-			ByteArrayOutputStream arrayOutputStream = new ByteArrayOutputStream();
-			int i;
-			while ((i = dataInputStream.read()) != -1) {
-				arrayOutputStream.write((i ^ 0xFFFFF & 0xFF));
-			}
-			text = new String(arrayOutputStream.toByteArray(), "UTF-8");
-			arrayOutputStream.flush();
-			arrayOutputStream.close();
-		} catch (IOException e) {
-		}
-		return text;
-	}
+
 
 	public final void a() {
 		GameMidlet.i.c();

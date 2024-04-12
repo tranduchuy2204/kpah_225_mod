@@ -1,10 +1,12 @@
 package classes;
 
-import javax.microedition.midlet.MIDlet;
-import javax.microedition.lcdui.Canvas;
 import java.util.Vector;
-import game.GameMidlet;
+
+import javax.microedition.lcdui.Canvas;
 import javax.microedition.lcdui.Graphics;
+import javax.microedition.midlet.MIDlet;
+
+import game.GameMidlet;
 
 public final class class_wc extends class_aae {
 	public static class_wc a;
@@ -66,14 +68,20 @@ public final class class_wc extends class_aae {
 	}
 
 	private class_wc() {
-		this.k = new String[][] { { "Cửa hàng" },
-				{ "Cài đặt", "Cấu hình", "Bản đồ lớn", "Bật/tắt giao diện", "Hướng dẫn", "âm thanh", "Bật/tắt lời mời",
+		this.k = new String[][] { 
+			{ "Menu Premium", "Special", "Load Map", "Chỉ Đầu", "Xuống Ngựa", "Auto Chat", "Khác", "Đăng Xuất" },
+			{ "Cài đặt", "Cấu hình", "Bản đồ lớn", "Bật/tắt giao diện", "Hướng dẫn", "âm thanh", "Bật/tắt lời mời",
 						"Bật/tắt auto đánh", "Chế độ focus" },
-				{ "Bản thân", "Hành trang", "Kỹ năng", "Tiềm năng", "Trang bị", "Thông tin", "Trang bị thú", "Cây thần",
+			{ "Bản thân", "Hành trang", "Kỹ năng", "Tiềm năng", "Trang bị", "Thông tin", "Trang bị thú", "Cây thần",
 						"Cổ vật", "Khác" },
-				{ "Nap Xu" }, { "Nhiệm vụ" }, { "Đồ sát" }, { "Khác", "Tin nhắn", "Nhóm", "Bạn bè", "Top cao thủ",
+			{ "Nap Xu" },
+			{ "Nhiệm vụ" },
+			{ "Đồ sát" },
+			{ "Khác", "Tin nhắn", "Nhóm", "Bạn bè", "Top cao thủ",
 						"Top đại gia", "Bảng Top", "Kênh thế giới", "Diễn đàn", "Rời bang" },
-				{ "" }, { "Thoát" } };
+			{ "" },
+			{ "Cửa hàng" }, 
+			{"Thoát"} };
 		this.b = 0;
 		this.e = -1;
 		this.r = false;
@@ -188,25 +196,28 @@ public final class class_wc extends class_aae {
 		}
 		super.c();
 	}
-
+	
+	private void showStore() {
+		int n = 0;
+		for (int i = 0; i < class_yi.f.size(); ++i) {
+			final class_xv class_xv;
+			if ((class_xv = (class_xv) class_yi.f.elementAt(i)).g + 1 > n) {
+				n = class_xv.g + 1;
+			}
+		}
+		final byte[] array = new byte[n];
+		for (int j = 0; j < array.length; ++j) {
+			array[j] = 20;
+		}
+		class_nu.a().a(0, true, array);
+		class_nu.a().d();
+	}
+	
 	private void g() {
 		if (this.e == -1) {
 			if (this.k[this.b].length == 1) {
 				switch (this.b) {
 				case 0: {
-					int n = 0;
-					for (int i = 0; i < class_yi.f.size(); ++i) {
-						final class_xv class_xv;
-						if ((class_xv = (class_xv) class_yi.f.elementAt(i)).g + 1 > n) {
-							n = class_xv.g + 1;
-						}
-					}
-					final byte[] array = new byte[n];
-					for (int j = 0; j < array.length; ++j) {
-						array[j] = 20;
-					}
-					class_nu.a().a(0, true, array);
-					class_nu.a().d();
 					return;
 				}
 				case 3: {
@@ -223,8 +234,12 @@ public final class class_wc extends class_aae {
 					class_acv.s.D.c();
 					return;
 				}
+				case 9: {
+					GameMidlet.a.notifyDestroyed();
+					return;
+				}
 				case 8: {
-					((MIDlet) GameMidlet.a).notifyDestroyed();
+					this.showStore();
 					return;
 				}
 				}
@@ -246,6 +261,10 @@ public final class class_wc extends class_aae {
 		}
 		switch (this.b) {
 		case 0: {
+			if(this.e == 0) {
+				Menu.gI().specialMenu();
+				return;
+			}
 			if (this.e == 1) {
 				class_acv.s.u();
 				class_acv.s.d();
@@ -268,6 +287,11 @@ public final class class_wc extends class_aae {
 			break;
 		}
 		case 1: {
+			if(this.e == 0) {
+				Menu.showChangeMapMenu();
+				return;
+			}
+
 			if (this.e == 1) {
 				class_acv.s.d();
 				final short[][] array2 = { { 28, 105 }, { 55, 100 }, { 24, 138 }, { 61, 148 }, { 105, 76 }, { 80, 128 },
@@ -313,6 +337,10 @@ public final class class_wc extends class_aae {
 			return;
 		}
 		case 2: {
+			if (this.e == 0) {
+				Menu.gI().showPointerMenu();
+				return;
+			}
 			if (this.e == 1) {
 				class_acv.s.d();
 				final class_abj s = class_acv.s;
@@ -352,6 +380,10 @@ public final class class_wc extends class_aae {
 
 		}
 		case 3: {
+			if (this.e == 0) {
+				ModScr.doDownHorse();
+				return;
+			}
 			if (this.e == 1) {
 				class_acv.s.d();
 				class_bs.a().d();
@@ -373,6 +405,11 @@ public final class class_wc extends class_aae {
 			break;
 		}
 		case 4: {
+			if (this.e == 0) {
+				// show menu setting auto chat
+				Menu.gI().showOptionChat();
+				return;
+			}
 			if (this.e == 1) {
 				if (class_cy.a == null) {
 					break;
@@ -405,6 +442,10 @@ public final class class_wc extends class_aae {
 
 		}
 		case 5: {
+			if (this.e == 0) {
+				Menu.showOtherMenu();
+				return;
+			}
 			if (this.e == 7) {
 				class_abj.a(0, true, new byte[] { 29, 30 });
 				return;
@@ -427,6 +468,11 @@ public final class class_wc extends class_aae {
 			break;
 		}
 		case 6: {
+			if (this.e == 0) {
+				// do logout game 
+				ModScr.logOut();
+				return;
+			}
 			if (this.e == 7) {
 				class_acv.s.d();
 				class_act.a().a("", "Bang hội");

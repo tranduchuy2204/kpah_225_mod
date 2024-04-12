@@ -37,7 +37,7 @@ public final class class_pp extends class_hc {
 
 	public final void a(String paramString, class_s paramclass_s1, class_s paramclass_s2, class_s paramclass_s3) {
 		this.notiContent = paramString;
-		System.out.println(paramString + " - " + ModScr.isBlockNoti);
+		System.out.println(paramString + " - " + ModScr.blockMode);
 		if (paramString.indexOf("chỉ có thể vào lại game sau") != -1) {
 			paramclass_s1 = new class_s("OK", new class_aaw(class_acv.s));
 		}
@@ -130,8 +130,8 @@ public final class class_pp extends class_hc {
 	}
 
 	public final void b() {
-		if (ModScr.isBlockNoti > (byte) 0) {
-			if (ModScr.isBlockNoti == (byte) 1) {
+		if (ModScr.blockMode > (byte) 0) {
+			if (ModScr.blockMode == (byte) 1) {
 				class_acv.w = null;
 			}
 			String[] strings = StringUtils.split(ModScr.blockContent, ",");

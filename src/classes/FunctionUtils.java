@@ -11,18 +11,6 @@ package classes;
  */
 public class FunctionUtils {
 
-    public static short getIndexArrMap() {
-        class_abj gameScr = class_acv.s;
-        int num = gameScr.aJ.length;
-        for (int i = 0; i < num; i++) {
-            for (int j = 0; j < gameScr.aJ[i].length; j++) {
-                if (gameScr.aG == gameScr.aJ[i][j]) {
-                    return class_abj.aI[i];
-                }
-            }
-        }
-        return -1;
-    }
 
     public static String[] getMapName(int index, int id) {
         return class_yi.e(index, id);
@@ -37,6 +25,6 @@ public class FunctionUtils {
     }
 
     public static void move(int x, int y) {
-//        class_acv.s.d(x * 16, y * 16);
+    	// removed
     }
 }

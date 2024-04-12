@@ -1,9 +1,10 @@
 package classes;
 
-import game.GameMidlet;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.Vector;
+
+import game.GameMidlet;
 
 public final class class_go extends class_kr {
 
@@ -254,7 +255,6 @@ public final class class_go extends class_kr {
 		} catch (Exception var4) {
 			var4.printStackTrace();
 		}
-		ModScr.idItemKimDuoc = var1;
 		System.out.println(var1 + " - " + var2);
 	}
 

@@ -5,17 +5,12 @@
  */
 package classes;
 
-import game.GameMidlet;
-import utility.ResUtils;
-import utility.StringUtils;
-
 import java.io.ByteArrayInputStream;
 import java.io.DataInputStream;
 import java.io.IOException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
 
+import utility.ResUtils;
+import utility.StringUtils;
 
 /**
  *
@@ -29,13 +24,14 @@ public class ModScr extends Debug {
 
 	public static String[] focusText = { "không", "người đồ sát", "vận tiêu", "trấn yêu trận", "người giao thẻ",
 			"chỉ vào người", "né người" };
-	public static byte focusIndex;
-	public static String chatContent = "Khi Phach Anh Hung MOD by Tran Duc Huy";
-	public static boolean isAutoChat;
-	public static String blockContent = "abc,xyz,123";
-	public static byte isBlockNoti = 0;
-//    public static int onMap = -1;
 
+	public static String chatContent = "Khi Phach Anh Hung MOD by Tran Duc Huy";
+
+	public static String blockContent = "hay ghi noi dung can block";
+	public static byte blockMode = 0;
+
+	public static byte focusIndex;
+	public static boolean isAutoChat;
 	public static boolean isPointUserGiaoThe = false;
 	public static boolean isPointUserPhaThe = false;
 	public static boolean isPointUserUpLan = false;
@@ -43,14 +39,19 @@ public class ModScr extends Debug {
 	public static boolean isPointUser = false;
 	public static boolean isSkipUser = false;
 
-	public static short idItemKimDuoc;
-
 	public static String locationInfo = "chưa có";
 
-	public static String[] pointList = { "", "", "", "", "", "" };
+	public static String[] pointList = { "", "", "", "", "" };
 
-	public static long timeCheck = 0;
-
+	static {
+			focusList = new String[] {
+			"boss tho dien,dracula,boss gau xam,bach cot tuong quan,than lan,nhan sam,matquy,ran em,ran chi,thuoc cuong hoa sieu cap,bi ngo,tru rong", 
+			"ngua ca nhan xanh la,ngua ca nhan tim,ngua ca nhan vang,ngua ca nhan xanh,ngua ca nhan do", 
+			"tathonglinh,huuthonglinh,tranthonglinh", 
+			"tranduchuy",
+			"tranduchuy"};
+	}
+	
 	public static void pauseAllPointOption() {
 		isPointUserGiaoThe = isPointUserPhaThe = isPointUserUpLan = isPointBossAndPepper = isPointUser = false;
 	}
@@ -64,6 +65,7 @@ public class ModScr extends Debug {
 	}
 
 	public static void update() {
+		// move speed
 		class_abj.as = 100;
 		if (isPointUserGiaoThe && (class_acv.s.r != null) && (!isPointed(ModScr.pointList[0]))) {
 			class_acv.s.a(true);
