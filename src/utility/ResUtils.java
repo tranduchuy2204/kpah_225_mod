@@ -1,9 +1,12 @@
 package utility;
 
 import java.io.InputStream;
+
 import javax.microedition.rms.RecordStore;
 import javax.microedition.rms.RecordStoreException;
-
+/*
+ * Class về record, lưu trữ thông tin và ổ nhớ
+ */
 public class ResUtils {
 
 	public static byte[] loadRecordBytes(String string) {

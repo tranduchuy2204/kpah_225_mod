@@ -2,8 +2,19 @@ package utility;
 
 import java.util.Vector;
 
+/*
+ * Class để xử lý chuỗi ký tự vv
+ */
 public class StringUtils {
 
+	/**
+	 * Hàm này dùng để thay thế chuỗi
+	 * 
+	 * @param source  -> Chuỗi đưa vào
+	 * @param oldText -> Ký tự cần thay thế
+	 * @param newText -> Ký tự muốn thay thế
+	 * @return Ký tự đã được thay thế
+	 */
 	public static String replace(String source, String oldText, String newText) {
 		int s = 0;
 		int e = 0;
@@ -17,6 +28,13 @@ public class StringUtils {
 		return result.toString();
 	}
 
+	/**
+	 * Hàm này có chức năng tách chuỗi thành mảng String
+	 * 
+	 * @param st -> Chuỗi ký tự đưa vào example: "một,hai,ba,bốn"
+	 * @param x  -> Dấu ngăn cách giữa các ký tự (,)
+	 * @return -> mảng chuỗi các ký tự, ví dụ {"một", "hai", "ba', "bốn"}
+	 */
 	public static String[] split(String st, String x) {
 		Vector vt = new Vector();
 		String xm = x;
@@ -35,6 +53,10 @@ public class StringUtils {
 		return re;
 	}
 
+	/*
+	 * Hàm này có chức năng lấy các số có trong chuỗi ký tự
+	 * 
+	 */
 	public static int getDigistString(String source) {
 		char[] stringChars = source.toCharArray();
 		StringBuffer buffer = new StringBuffer();
@@ -49,6 +71,12 @@ public class StringUtils {
 		return Integer.parseInt(buffer.toString());
 	}
 
+	/**
+	 * Hàm này có chức năng format tiền tệ ví dụ 1000000 -> 1.000.000
+	 * 
+	 * @param l
+	 * @return
+	 */
 	public static String formatMoney(long l) {
 		String str = "";
 		final long n = l / 1000L + 1L;

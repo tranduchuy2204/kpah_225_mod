@@ -3,7 +3,9 @@ package utility;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.TimeZone;
-
+/*
+ * Class util về thời gian, ngày giờ vv
+ */
 public class DateTimeUtils {
 	public static String getDate(long currentTimeMillis) {
 		Date today = new Date(currentTimeMillis);

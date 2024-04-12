@@ -8,8 +8,7 @@ package utility;
 import classes.Debug;
 
 /**
- *
- * @author ASUS
+ * Lớp này dùng để chuyển các ký tự VN từ có dấu thành không dấu
  */
 public class VNCharacterUtils extends Debug{
 
