@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.Vector;
+
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
 
@@ -30,20 +31,7 @@ public abstract class class_bg {
 			paramGraphics.drawImage(bd, class_acv.o, 0, 17);
 		}
 
-		if (class_acv.q == class_acv.s) {
-			int xPos = class_abj.O.getHeight() - 9 + 12;
-//            class_d.b.a(paramGraphics, "Lv " + class_acv.s.q.N + "+" + class_acv.s.q.Q(), 37, xPos, 0);
-			class_d.b.a(paramGraphics, "ID: " + class_acv.s.q.a_(), 1, xPos, 0);
-			xPos += 12;
-			class_d.b.a(paramGraphics, "Xu: " + class_acv.a(class_acv.s.q.br), 1, xPos, 0);
-			xPos += 12;
-			class_d.b.a(paramGraphics,
-					"Lượng: " + class_acv.a(class_acv.s.q.aV) + "L - " + class_acv.a(class_acv.s.q.aW) + "LK", 1, xPos,
-					0);
-			xPos += 12;
-			class_d.b.a(paramGraphics, "Đồ bền: " + ModScr.getDoBen(), 1, xPos, 0);
-			xPos += 12;
-		}
+		Paint.onPaint(paramGraphics);
 	}
 
 	public void c() {
