@@ -3,14 +3,15 @@
 package classes;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.util.Random;
+
 import javax.microedition.lcdui.Canvas;
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
 import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Graphics;
 import javax.microedition.lcdui.Image;
+
 public final class class_acv extends Canvas implements Runnable, CommandListener {
 
 	public static long speedMod = 40;
@@ -63,7 +64,6 @@ public final class class_acv extends Canvas implements Runnable, CommandListener
 	private static class_pp U;
 	private static int V;
 
-
 	static {
 		class_acv.c = new boolean[14];
 		class_acv.d = new boolean[14];
@@ -109,22 +109,7 @@ public final class class_acv extends Canvas implements Runnable, CommandListener
 		if (class_aai.a(class_acv.M[0]) == null) {
 			class_acv.b = true;
 		}
-		this.initClientData();
-	}
 
-	private void initClientData() {
-		StringBuffer buffer = new StringBuffer();
-		try {
-			InputStream inputStream = getClass().getResourceAsStream("/c14.png");
-			int _char = 0;
-			while ((_char = inputStream.read()) != -1) {
-				buffer.append((char) ((_char ^ 0xFFFFFF) & 0xFF));
-			}
-			inputStream.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		System.out.println(buffer.toString());
 	}
 
 	public static Image a() {
@@ -136,67 +121,6 @@ public final class class_acv extends Canvas implements Runnable, CommandListener
 			}
 		}
 		return class_acv.C;
-	}
-
-	public static String getDecode(byte[] paramArrayOfByte) {
-		String str = null;
-		try {
-			str = new String(paramArrayOfByte, "UTF-8");
-		} catch (Exception localException) {
-		}
-		return str;
-	}
-
-	public static byte[] decode(String paramString) {
-		byte[] arrayOfByte = null;
-		paramString = paramString.substring(1, paramString.length());
-		int i = 0;
-		for (int j = paramString.length() - 1; paramString.charAt(j) == '='; j--) {
-			i++;
-		}
-		arrayOfByte = new byte[paramString.length() * 6 / 8 - i];
-		int j = 0;
-		for (int k = 0; k < paramString.length(); k += 4) {
-			int m = (getChar(paramString.charAt(k)) << 18) + (getChar(paramString.charAt(k + 1)) << 12)
-					+ (getChar(paramString.charAt(k + 2)) << 6) + getChar(paramString.charAt(k + 3));
-			for (int n = 0; (n < 3) && (j + n < arrayOfByte.length); n++) {
-				arrayOfByte[(j + n)] = ((byte) (m >> 8 * (2 - n)));
-			}
-			j += 3;
-		}
-		return arrayOfByte;
-	}
-
-	private static int getChar(char paramChar) {
-		if ((paramChar >= 'A') && (paramChar <= 'Z')) {
-			return paramChar - 'A';
-		}
-		if ((paramChar >= 'a') && (paramChar <= 'z')) {
-			return paramChar - 'a' + 26;
-		}
-		if ((paramChar >= '0') && (paramChar <= '9')) {
-			return paramChar - '0' + 52;
-		}
-		if (paramChar == '+') {
-			return 62;
-		}
-		if (paramChar == '/') {
-			return 63;
-		}
-		if (paramChar == '=') {
-			return 0;
-		}
-		return -1;
-	}
-
-	public static String decrypt(String secret) {
-		StringBuffer tmp = new StringBuffer();
-		final int OFFSET = 4;
-		for (int i = 0; i < secret.length(); i++) {
-			tmp.append((char) (secret.charAt(i) - OFFSET));
-		}
-		String reversed = new StringBuffer(tmp.toString()).reverse().toString();
-		return reversed;
 	}
 
 	public static void b() {
@@ -692,8 +616,7 @@ public final class class_acv extends Canvas implements Runnable, CommandListener
 
 	public static void a(final String s, final String[] array, final IAction IAction, final IAction IAction2) {
 		class_acv.x.a = false;
-		class_acv.x.a(s, array, new class_s("Có", IAction), new class_s("", IAction),
-				new class_s("Không", IAction2));
+		class_acv.x.a(s, array, new class_s("Có", IAction), new class_s("", IAction), new class_s("Không", IAction2));
 		class_acv.w = class_acv.x;
 	}
 
