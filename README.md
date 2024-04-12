@@ -40,5 +40,3 @@
 
 - [@tranduchuy2204](https://github.com/tranduchuy2204)
 
-# kpah_225_mod
-The moditify of KPAH
