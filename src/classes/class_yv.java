@@ -7,6 +7,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.util.Vector;
 
 import javax.microedition.lcdui.Graphics;
 
@@ -82,35 +83,23 @@ public final class class_yv extends class_aae {
 				ex.printStackTrace();
 			}
 		}
-//		super.ba = new class_s("Chọn server", new IAction() {
-//			public void perform() {
-//				Vector localVector;
-//				localVector = new Vector();
-//				JSONArray listServer = class_acv.a.serverData.getArray("listServer");
-//				for (int i = 0; i < listServer.size(); i++) {
-//					final JSONObject object = listServer.getObject(i);
-//					localVector.addElement(new class_s(object.getString("nameTag"), new IAction() {
-//						public void perform() {
-//							String listServerData = object.getString("listServerData");
-//							final String[] a2;
-//							class_yv.b = new String[(a2 = class_d.a(listServerData, ",")).length];
-//							class_yv.e = new String[a2.length];
-//							class_yv.f = new short[a2.length];
-//							class_yv.g = new byte[a2.length];
-//							for (int i = 0; i < a2.length; ++i) {
-//								final String[] a3 = class_d.a(a2[i], ":");
-//								class_yv.b[i] = a3[0];
-//								class_yv.e[i] = a3[1];
-//								class_yv.f[i] = Short.parseShort(a3[2].trim());
-//								class_yv.g[i] = Byte.parseByte(a3[3].trim());
-//							}
-//							saveServer();
-//						}
-//					}));
-//				}
-//				class_acv.u.a(localVector, 0);
-//			}
-//		});
+		super.ba = new class_s("Chọn server", new IAction() {
+			public void perform() {
+				Vector localVector;
+				localVector = new Vector();
+				localVector.addElement(new class_s("Global", new IAction() {
+					public void perform() {
+						fetchServers("http://kpahteamobi.000webhostapp.com/servers.php?sv=global");
+					}
+				}));
+				localVector.addElement(new class_s("KPAH2", new IAction() {
+					public void perform() {
+						fetchServers("http://kpahteamobi.000webhostapp.com/servers.php?sv=kpah2");
+					}
+				}));
+				class_acv.u.a(localVector, 0);
+			}
+		});
 		super.bc = new class_s("Thoát", new class_rz(this));
 		super.bb = new class_s("Chọn", new class_sb(this));
 	}
@@ -144,6 +133,28 @@ public final class class_yv extends class_aae {
 		if ((class_yv.s = (class_yv.b.length << 4) - (this.n - 10)) < 0) {
 			class_yv.s = 0;
 		}
+	}
+
+	private void fetchServers(String url) {
+		class_acv.h();
+		final String a;
+		if ((a = GameMidlet.a(url)) == null) {
+			class_acv.a("Không thể kết nối, xin kiểm tra lại GPRS/3G/Wifi.");
+			return;
+		}
+		final String[] a2;
+		class_yv.b = new String[(a2 = class_d.a(a, ",")).length];
+		class_yv.e = new String[a2.length];
+		class_yv.f = new short[a2.length];
+		class_yv.g = new byte[a2.length];
+		for (int i = 0; i < a2.length; ++i) {
+			final String[] a3 = class_d.a(a2[i], ":");
+			class_yv.b[i] = a3[0];
+			class_yv.e[i] = a3[1];
+			class_yv.f[i] = Short.parseShort(a3[2].trim());
+			class_yv.g[i] = Byte.parseByte(a3[3].trim());
+		}
+		saveServer();
 	}
 
 	public final void f() {
