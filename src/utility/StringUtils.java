@@ -49,4 +49,27 @@ public class StringUtils {
 		return Integer.parseInt(buffer.toString());
 	}
 
+	public static String formatMoney(long l) {
+		String str = "";
+		final long n = l / 1000L + 1L;
+		for (int n2 = 0; n2 < n; ++n2) {
+			if (l < 1000L) {
+				str = String.valueOf(l) + str;
+				break;
+			}
+			final long lng;
+			if ((lng = l % 1000L) == 0L) {
+				str = ".000" + str;
+			} else if (lng < 10L) {
+				str = ".00" + lng + str;
+			} else if (lng < 100L) {
+				str = ".0" + lng + str;
+			} else {
+				str = "." + lng + str;
+			}
+			l /= 1000L;
+		}
+		return str;
+	}
+
 }
