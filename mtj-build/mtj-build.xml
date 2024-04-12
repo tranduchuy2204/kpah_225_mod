@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir=".." default="build-all" name="KPAH_255_MOD">
+	<target depends="clean-all" name="build-all">
+		<antcall target="package-DefaultColorPhone" />
+	</target>
+	<taskdef classpath="${antenna.lib}" resource="antenna.properties" />
+	<property file="mtj-build/mtj-build.properties" />
+	<taskdef classname="BuildFilesFilter"
+	         classpath="mtj-build/custom-tasks"
+	         name="buildFilesFilter" />
+	<target depends="" name="clean-all">
+		<antcall target="clean-DefaultColorPhone" />
+	</target>
+	<target depends="" name="clean-DefaultColorPhone">
+		<delete dir="mtj-build/DefaultColorPhone" failonerror="false" />
+	</target>
+	<target depends="clean-DefaultColorPhone" name="init-DefaultColorPhone">
+		<mkdir dir="mtj-build/DefaultColorPhone/KPAH_255_MOD/" />
+		<mkdir dir="deployed/DefaultColorPhone/" />
+		<mkdir dir="mtj-build/DefaultColorPhone/KPAH_255_MOD/classes/" />
+		<mkdir dir="mtj-build/DefaultColorPhone/KPAH_255_MOD/resources/" />
+		<mkdir dir="mtj-build/DefaultColorPhone/KPAH_255_MOD/bin/" />
+		<copy file="Application Descriptor"
+		      tofile="deployed/DefaultColorPhone/KPAH_255_MOD.jad" />
+	</target>
+	<target depends="init-DefaultColorPhone"
+	        name="buildFilesFilter-DefaultColorPhone">
+		<buildFilesFilter buildProperties="${basedir}/build.properties"
+		                  device="DefaultColorPhone"
+		                  dirclasses="mtj-build/DefaultColorPhone/KPAH_255_MOD/classes/"
+		                  dirresources="mtj-build/DefaultColorPhone/KPAH_255_MOD/resources/">
+			<fileset dir="../KPAH_255_MOD/src" />
+			<fileset dir="../KPAH_255_MOD/res" />
+		</buildFilesFilter>
+	</target>
+	<target depends="buildFilesFilter-DefaultColorPhone"
+	        name="build-DefaultColorPhone">
+		<wtkbuild bootclasspath="C:\WTK2.5.2_01\lib\midpapi21.jar:C:\WTK2.5.2_01\lib\cldcapi11.jar:C:\WTK2.5.2_01\lib\wma20.jar:C:\WTK2.5.2_01\lib\mmapi.jar:C:\WTK2.5.2_01\lib\j2me-ws.jar:C:\WTK2.5.2_01\lib\j2me-xmlrpc.jar:C:\WTK2.5.2_01\lib\jsr75.jar:C:\WTK2.5.2_01\lib\jsr082.jar:C:\WTK2.5.2_01\lib\jsr184.jar:C:\WTK2.5.2_01\lib\jsr179.jar:C:\WTK2.5.2_01\lib\satsa-apdu.jar:C:\WTK2.5.2_01\lib\satsa-jcrmi.jar:C:\WTK2.5.2_01\lib\satsa-pki.jar:C:\WTK2.5.2_01\lib\satsa-crypto.jar:C:\WTK2.5.2_01\lib\jsr211.jar:C:\WTK2.5.2_01\lib\jsr238.jar:C:\WTK2.5.2_01\lib\jsr229.jar:C:\WTK2.5.2_01\lib\jsr180.jar:C:\WTK2.5.2_01\lib\jsr234.jar:C:\WTK2.5.2_01\lib\jsr226.jar:C:\WTK2.5.2_01\lib\jsr239.jar:C:\Users\Noverify\Desktop\FuckingFolders\JarFiles\KPAH_225_OBF.jar:"
+		          destdir="mtj-build/DefaultColorPhone/KPAH_255_MOD/bin/"
+		          encoding="UTF-8"
+		          preverify="false"
+		          source="1.3"
+		          sourcepath=""
+		          fork="true"
+		          executable="${java.executable}"
+		          srcdir="mtj-build/DefaultColorPhone/KPAH_255_MOD/classes/" />
+	</target>
+	<target depends="build-DefaultColorPhone" name="package-DefaultColorPhone">
+		<wtkpackage autoversion="${do-autoversion}"
+		            bootclasspath="C:\WTK2.5.2_01\lib\midpapi21.jar:C:\WTK2.5.2_01\lib\cldcapi11.jar:C:\WTK2.5.2_01\lib\wma20.jar:C:\WTK2.5.2_01\lib\mmapi.jar:C:\WTK2.5.2_01\lib\j2me-ws.jar:C:\WTK2.5.2_01\lib\j2me-xmlrpc.jar:C:\WTK2.5.2_01\lib\jsr75.jar:C:\WTK2.5.2_01\lib\jsr082.jar:C:\WTK2.5.2_01\lib\jsr184.jar:C:\WTK2.5.2_01\lib\jsr179.jar:C:\WTK2.5.2_01\lib\satsa-apdu.jar:C:\WTK2.5.2_01\lib\satsa-jcrmi.jar:C:\WTK2.5.2_01\lib\satsa-pki.jar:C:\WTK2.5.2_01\lib\satsa-crypto.jar:C:\WTK2.5.2_01\lib\jsr211.jar:C:\WTK2.5.2_01\lib\jsr238.jar:C:\WTK2.5.2_01\lib\jsr229.jar:C:\WTK2.5.2_01\lib\jsr180.jar:C:\WTK2.5.2_01\lib\jsr234.jar:C:\WTK2.5.2_01\lib\jsr226.jar:C:\WTK2.5.2_01\lib\jsr239.jar:C:\Users\Noverify\Desktop\FuckingFolders\JarFiles\KPAH_225_OBF.jar:"
+		            jadfile="deployed/DefaultColorPhone/KPAH_255_MOD.jad"
+		            jarfile="deployed/DefaultColorPhone/KPAH_225.jar"
+		            libclasspath="C:\Users\Noverify\Desktop\FuckingFolders\JarFiles\KPAH_225_OBF.jar:"
+		            obfuscate="${do-obfuscate}"
+		            preverify="true">
+			<fileset dir="mtj-build/DefaultColorPhone/KPAH_255_MOD/bin/" />
+			<fileset dir="mtj-build/DefaultColorPhone/KPAH_255_MOD/resources/" />
+		</wtkpackage>
+	</target>
+</project>
