@@ -19,6 +19,7 @@ import javax.microedition.lcdui.Item;
 import javax.microedition.lcdui.ItemStateListener;
 import javax.microedition.lcdui.TextField;
 import utility.ResUtils;
+import utility.VNCharacterUtils;
 
 /**
  *

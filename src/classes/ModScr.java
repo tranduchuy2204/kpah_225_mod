@@ -11,6 +11,7 @@ import java.io.IOException;
 
 import utility.ResUtils;
 import utility.StringUtils;
+import utility.VNCharacterUtils;
 
 /**
  *

@@ -8,6 +8,7 @@ package classes;
 import javax.microedition.lcdui.Graphics;
 
 import utility.StringUtils;
+import utility.VNCharacterUtils;
 
 /**
  *
