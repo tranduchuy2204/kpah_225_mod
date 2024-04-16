@@ -3,6 +3,7 @@ MIDlet-Version: 1.5.9
 Manifest-Version: 1.0
 MicroEdition-Configuration: CLDC-1.0
 MIDlet-Name: Khi Phach Anh Hung
+MIDlet-1: Khi Phach Anh Hung,/icon.png,game.GameMidlet
 MicroEdition-Profile: MIDP-2.0
 MIDlet-Jar-URL: KPAH_209.jar
-MIDlet-Jar-Size: 1207720
+MIDlet-Jar-Size: 1207743
