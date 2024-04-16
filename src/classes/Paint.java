@@ -37,7 +37,8 @@ public class Paint {
 			if (ModController.globalConfig.paintConfig.isPaintExpPlus) {
 				class_d.b.a(_graphics, "Exp Plus: " + StringUtils.formatMoney(MainCharInfo.expPlus), 1, xPos += 12, 0);
 			}
-			class_d.b.a(_graphics, "Xu kiếm được: " + MainCharInfo.getCoinsEarned(), 1, xPos += 12, 0);
+			class_d.b.a(_graphics, "Xu kiếm được: " + StringUtils.formatMoney(MainCharInfo.getCoinsEarned()), 1,
+					xPos += 12, 0);
 		}
 	}
 }
