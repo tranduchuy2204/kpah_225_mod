@@ -5,6 +5,9 @@
  */
 package classes;
 
+import javax.microedition.lcdui.Display;
+import javax.microedition.lcdui.Displayable;
+
 /**
  *
  * @author Noverify
@@ -27,4 +30,7 @@ public class ModHelpers {
 		return currentTime() - time;
 	}
 
+	public static void setCurrentScreen(Displayable dsplayable) {
+		Display.getDisplay(game.GameMidlet.a).setCurrent(dsplayable);
+	}
 }
