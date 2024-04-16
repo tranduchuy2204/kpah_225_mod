@@ -17,9 +17,9 @@
 
 ## Chức năng
 
-- Auto chat
-- Auto chọn chỉ đầu, vv
-- Và nhiều ...
+- 10/04/2024 : Hoàn thành các mod cũ lên phiên bản mới nhất
+- 13/04/2024 : Thêm chức năng chọn mutil server (teamobi, nqsh, private, vv)
+- 16/04/2024 : Thêm chức năng tính xu up được
 
 
 ## Cài đặt
