@@ -69,7 +69,7 @@ public final class class_wc extends class_aae {
 
 	private class_wc() {
 		this.k = new String[][] {
-				{ "Menu Premium", "Special", "Config Mod", "Lưu vị trí hiện tại", "Xuống Ngựa", "Auto Chat", "Khác", "Đăng Xuất" },
+				{ "Menu Premium", "Advanced", "Mod setting", "Lưu vị trí", "Xuống ngựa", "Auto chat", "Khác", "Đăng xuất" },
 				{ "Cài đặt", "Cấu hình", "Bản đồ lớn", "Bật/tắt giao diện", "Hướng dẫn", "âm thanh", "Bật/tắt lời mời",
 						"Bật/tắt auto đánh", "Chế độ focus" },
 				{ "Bản thân", "Hành trang", "Kỹ năng", "Tiềm năng", "Trang bị", "Thông tin", "Trang bị thú", "Cây thần",
