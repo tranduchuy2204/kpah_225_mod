@@ -58,6 +58,12 @@ public class ConfigMod {
 		if (paintCf.isPaintCurrentPosition) {
 			cg.setSelectedIndex(4, true);
 		}
+		if (paintCf.isPaintSavedPosition) {
+			cg.setSelectedIndex(5, true);
+		}
+		if (paintCf.isPaintExpPlus) {
+			cg.setSelectedIndex(6, true);
+		}
 	}
 
 	void readPaintOption(ChoiceGroup cg) {
@@ -67,6 +73,8 @@ public class ConfigMod {
 		paintCf.isPaintBalance = cg.isSelected(2);
 		paintCf.isPaintDoBen = cg.isSelected(3);
 		paintCf.isPaintCurrentPosition = cg.isSelected(4);
+		paintCf.isPaintSavedPosition = cg.isSelected(5);
+		paintCf.isPaintExpPlus = cg.isSelected(6);
 	}
 
 	public void generalFormConfig() {
@@ -86,6 +94,8 @@ public class ConfigMod {
 		choiceGroupPaint.append("Xu lượng", null);
 		choiceGroupPaint.append("Độ bền", null);
 		choiceGroupPaint.append("Tọa độ hiện tại", null);
+		choiceGroupPaint.append("Tọa độ đã được lưu", null);
+		choiceGroupPaint.append("Exp nhận được", null);
 		setPaintOption(choiceGroupPaint);
 
 		configForm.append(choiceSpeed);

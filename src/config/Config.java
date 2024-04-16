@@ -13,8 +13,11 @@ public class Config {
 	public AutoChatConfig autoChatConfig = new AutoChatConfig();
 	public AutoClickConfig autoClickConfig = new AutoClickConfig();
 	public PaintConfig paintConfig = new PaintConfig();
+
 	public boolean isBlockNoti = false;
 	public long gameSpeed = 40;
+	public String savedPostion = "";
+
 	public boolean isAutoRemoveDa;
 	public boolean isAutoRemoveTranh;
 	public boolean isAutoCayThan;
@@ -37,6 +40,8 @@ public class Config {
 		public boolean isPaintBalance = true;
 		public boolean isPaintDoBen = true;
 		public boolean isPaintCurrentPosition = true;
+		public boolean isPaintSavedPosition = true;
+		public boolean isPaintExpPlus = true;
 	}
 
 //	public class FocusConfig {
@@ -78,6 +83,8 @@ public class Config {
 				_config.gameSpeed = dis.readLong();
 				// block noti
 				_config.isBlockNoti = dis.readBoolean();
+				// saved location
+				_config.savedPostion = dis.readUTF();
 				// read auto chat configuration
 				_config.autoChatConfig.content = dis.readUTF();
 				_config.autoChatConfig.delay = dis.readInt();
@@ -91,6 +98,8 @@ public class Config {
 				_config.paintConfig.isPaintBalance = dis.readBoolean();
 				_config.paintConfig.isPaintDoBen = dis.readBoolean();
 				_config.paintConfig.isPaintCurrentPosition = dis.readBoolean();
+				_config.paintConfig.isPaintSavedPosition = dis.readBoolean();
+				_config.paintConfig.isPaintExpPlus = dis.readBoolean();
 
 //				_config.isAutoRemoveDa = dis.readBoolean();
 //				_config.isAutoRemoveTranh = dis.readBoolean();
@@ -101,6 +110,7 @@ public class Config {
 				bais.close();
 
 			} catch (IOException ex) {
+				_config = new Config();
 				ex.printStackTrace();
 			} finally {
 				if (bais != null) {
@@ -124,6 +134,8 @@ public class Config {
 			dos.writeLong(gameSpeed);
 			// block noti
 			dos.writeBoolean(isBlockNoti);
+			// saved location
+			dos.writeUTF(savedPostion);
 			// auto chat
 			dos.writeUTF(autoChatConfig.content);
 			dos.writeInt(autoChatConfig.delay);
@@ -137,12 +149,14 @@ public class Config {
 			dos.writeBoolean(paintConfig.isPaintBalance);
 			dos.writeBoolean(paintConfig.isPaintDoBen);
 			dos.writeBoolean(paintConfig.isPaintCurrentPosition);
-			
+			dos.writeBoolean(paintConfig.isPaintSavedPosition);
+			dos.writeBoolean(paintConfig.isPaintExpPlus);
+
 //			dos.writeBoolean(isAutoRemoveDa);
 //			dos.writeBoolean(isAutoRemoveTranh);
 //			dos.writeBoolean(isAutoCayThan);
 //			dos.writeBoolean(isLiaQuai);
-			
+
 			ResUtils.saveRecordBytes(CONFIG_RECORD_NAME, baos.toByteArray());
 			dos.flush();
 		} catch (IOException e) {

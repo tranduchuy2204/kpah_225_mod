@@ -74,6 +74,7 @@ public final class class_xw extends class_aae {
 			this.b.b();
 			this.i = AccountUtils.isRememberAccount;
 		}
+		MainCharInfo.expPlus = 0;
 		this.e();
 		this.k = new class_s((class_acv.m > 200) ? "Đăng nhập" : "Đ.Nhập", new class_jm(this));
 		super.bb = this.k;
@@ -93,7 +94,7 @@ public final class class_xw extends class_aae {
 	}
 
 	private void onLoadData() {
-		
+
 	}
 
 	public void getCurrentAccount() {

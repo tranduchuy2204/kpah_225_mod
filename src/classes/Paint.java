@@ -31,6 +31,12 @@ public class Paint {
 			if (ModController.globalConfig.paintConfig.isPaintCurrentPosition) {
 				class_d.b.a(_graphics, "Toạ độ: " + ModHelpers.getMapNameAndPosition(), 1, xPos += 12, 0);
 			}
+			if (ModController.globalConfig.paintConfig.isPaintSavedPosition) {
+				class_d.b.a(_graphics, "Toạ độ lưu: " + ModController.globalConfig.savedPostion, 1, xPos += 12, 0);
+			}
+			if (ModController.globalConfig.paintConfig.isPaintExpPlus) {
+				class_d.b.a(_graphics, "Exp Plus: " + StringUtils.formatMoney(MainCharInfo.expPlus), 1, xPos += 12, 0);
+			}
 			class_d.b.a(_graphics, "Xu kiếm được: " + MainCharInfo.getCoinsEarned(), 1, xPos += 12, 0);
 		}
 	}

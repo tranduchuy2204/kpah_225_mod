@@ -69,6 +69,10 @@ public class ModController {
 		class_go.a().a((short) 59, 0, (byte) 0);
 	}
 
+	public void calCharactorLevelUp() {
+
+	}
+
 	public static void xaPhu() {
 		new class_om(class_acv.s).perform();
 	}
@@ -79,6 +83,14 @@ public class ModController {
 
 	public static void setNoti(String s) {
 		class_acv.a(s);
+	}
+
+	public static void doSaveCurrentLocation() {
+		// Lưu toạ độ đang đứng vào record
+		String currentLocation = ModHelpers.getMapNameAndPosition();
+		ModController.globalConfig.savedPostion = currentLocation;
+		ModController.globalConfig.saveConfig();
+		class_acv.a("Đã lưu vị trí " + currentLocation + " vào ổ lưu trữ!");
 	}
 
 	public static void logOut() {

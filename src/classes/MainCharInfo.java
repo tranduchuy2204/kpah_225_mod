@@ -3,6 +3,7 @@ package classes;
 public class MainCharInfo {
 
 	private static long initialCoins = -1;
+	public static int expPlus = 0; // kinh nghiệm được cộng
 
 	public static String getPlayerName() {
 		return class_acv.s.q.a_();

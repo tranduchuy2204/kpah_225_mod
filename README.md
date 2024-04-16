@@ -28,6 +28,8 @@
 - 16/04/2024 : Thêm chức năng auto cây thần (implements Dong Nguyen version)
 - 16/04/2024 : Thêm chức năng auto tranh, đá (implements Dong Nguyen version)
 - 16/04/2024 : Thêm chức năng Lia quái (implements Dong Nguyen version)
+- 16/04/2024 : Thêm chức năng Lưu toạ độ vào record
+- 16/04/2024 : Thêm chức năng Hiển thị exp đã nhận được tại mỗi phiên đăng nhập
 
 ## Cài đặt
 

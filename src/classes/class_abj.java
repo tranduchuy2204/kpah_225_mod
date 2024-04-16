@@ -4639,6 +4639,9 @@ public final class class_abj extends class_aae {
 	public final void a(short var1, short var2, int var3) {
 		class_hw var4;
 		if ((var4 = (class_hw) this.b(var1)) != null) {
+			if (var4.a_().equals(class_acv.s.q.a_())) {
+				MainCharInfo.expPlus += var3;
+			}
 			var4.aR = var2;
 			this.a("+" + var3 + "xp", 2, var4.cK, var4.cL - 30, -1, -1);
 		}

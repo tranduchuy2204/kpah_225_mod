@@ -69,7 +69,7 @@ public final class class_wc extends class_aae {
 
 	private class_wc() {
 		this.k = new String[][] {
-				{ "Menu Premium", "Special", "Config Mod", "Chỉ Đầu", "Xuống Ngựa", "Auto Chat", "Khác", "Đăng Xuất" },
+				{ "Menu Premium", "Special", "Config Mod", "Lưu vị trí hiện tại", "Xuống Ngựa", "Auto Chat", "Khác", "Đăng Xuất" },
 				{ "Cài đặt", "Cấu hình", "Bản đồ lớn", "Bật/tắt giao diện", "Hướng dẫn", "âm thanh", "Bật/tắt lời mời",
 						"Bật/tắt auto đánh", "Chế độ focus" },
 				{ "Bản thân", "Hành trang", "Kỹ năng", "Tiềm năng", "Trang bị", "Thông tin", "Trang bị thú", "Cây thần",
@@ -334,7 +334,8 @@ public final class class_wc extends class_aae {
 		case 2: {
 			if (this.e == 0) {
 //				Menu.gI().showPointerMenu();
-				class_acv.a("Chức năng đã được loại bỏ!");
+
+				ModController.doSaveCurrentLocation();
 				return;
 			}
 			if (this.e == 1) {
