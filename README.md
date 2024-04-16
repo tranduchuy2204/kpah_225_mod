@@ -7,6 +7,8 @@
 
 ## Tech
 
+![background](/images/background.png)
+
 **Language:** Java
 
 **Build Tool:** Ant Builder, Eclipse 2024, WTK
