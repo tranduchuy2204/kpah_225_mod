@@ -70,8 +70,8 @@ public class AutoClick implements IAction, Runnable {
 		form.append("HDSD: Mỗi lệnh nhấn phím sẽ được cách nhau bởi dấu phẩy (,)\n"
 				+ "Dấu hai chấm (:) là khoảng cách giữ mã phím và thời gian nghỉ sau khi nhấn(tính băng giây)\n"
 				+ "Ví dụ tôi tự nhấn vào button đăng xuất game:\n" + "-6:1,-5:1,-1:1,-1:1,-5:1");
-		form.addCommand(new Command("Lưu", 4, 1));
-		form.addCommand(new Command("Quay lại", 2, 1));
+		form.addCommand(new Command("Lưu", 4, 0));
+		form.addCommand(new Command("Quay lại", 7, 0));
 		form.setCommandListener(new CommandListener() {
 
 			public void commandAction(Command cmd, Displayable arg1) {
