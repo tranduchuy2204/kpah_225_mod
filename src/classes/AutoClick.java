@@ -93,8 +93,8 @@ public class AutoClick implements IAction, Runnable {
 						return;
 					}
 					_config.autoClickConfig.keyBoardCodes = keyBoardCodesTF.getString();
-					_config.autoClickConfig.activeKey = Integer.parseInt(activeKeyTF.toString());
-					_config.autoClickConfig.delay = Integer.parseInt(delayTF.toString());
+					_config.autoClickConfig.activeKey = Integer.parseInt(activeKeyTF.getString());
+					_config.autoClickConfig.delay = Integer.parseInt(delayTF.getString());
 					_config.saveConfig();
 				}
 				isRunning = false;
