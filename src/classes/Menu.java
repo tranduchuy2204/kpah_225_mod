@@ -35,7 +35,7 @@ public class Menu {
 	}
 
 	public static void showConfigMenu() {
-		new ConfigMod().generalFormConfig();
+		new Setting().generalFormConfig();
 	}
 
 	public static void showOtherMenu() {

@@ -18,7 +18,7 @@ import config.Config.PaintConfig;
  *
  * @author ASUS
  */
-public class ConfigMod {
+public class Setting {
 
 	public Form configForm;
 
