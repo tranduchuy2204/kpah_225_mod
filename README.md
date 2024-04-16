@@ -3,11 +3,9 @@
 
 - Đây là phiên bản game KPAH được phát hành bởi teamobi, đã được mod lại
 - Đây là mã nguồn mình đã viết phần core, các bạn có thể clone về và mod thêm các chức năng theo yêu thích.
-
+![background](/images/background.png)
 
 ## Tech
-
-![background](/images/background.png)
 
 **Language:** Java
 
