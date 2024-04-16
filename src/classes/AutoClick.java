@@ -76,11 +76,11 @@ public class AutoClick implements IAction, Runnable {
 
 			public void commandAction(Command cmd, Displayable arg1) {
 				if (cmd.getCommandType() == 4) {
-					String[] l = StringUtils.split(keyBoardCodesTF.getString(), ",");
-					for (int i = 0; i < l.length; i++) {
-						String[] l2 = StringUtils.split(l[i], ":");
-						for (int j = 0; j < l2.length; j++) {
-							if (!isNumber(l2[j]) || l[i].indexOf(":") == -1) {
+					String[] keyboardCodes = StringUtils.split(keyBoardCodesTF.getString(), ",");
+					for (int i = 0; i < keyboardCodes.length; i++) {
+						String[] clickCode = StringUtils.split(keyboardCodes[i], ":");
+						for (int j = 0; j < clickCode.length; j++) {
+							if (!isNumber(clickCode[j]) || keyboardCodes[i].indexOf(":") == -1) {
 								Display.getDisplay(game.GameMidlet.a).setCurrent(
 										new Alert("Cảnh báo", "Mã phím không hợp lệ", null, AlertType.ERROR));
 								return;
@@ -115,12 +115,12 @@ public class AutoClick implements IAction, Runnable {
 
 	public void run() {
 		do {
-			String[] l = StringUtils.split(_config.autoClickConfig.keyBoardCodes, ",");
-			for (int i = 0; i < l.length && isAutoClick; i++) {
-				String[] l2 = StringUtils.split(l[i], ":");
-				class_acv.a.keyPressed(Integer.parseInt(l2[0]));
-				class_acv.a.keyReleased(Integer.parseInt(l2[0]));
-				delay(Math.abs(Integer.parseInt(l2[1]) * 1000));
+			String[] keyboardCodes = StringUtils.split(_config.autoClickConfig.keyBoardCodes, ",");
+			for (int i = 0; i < keyboardCodes.length && isAutoClick; i++) {
+				String[] clickCode = StringUtils.split(keyboardCodes[i], ":");
+				class_acv.a.keyPressed(Integer.parseInt(clickCode[0]));
+				class_acv.a.keyReleased(Integer.parseInt(clickCode[0]));
+				delay(Math.abs(Integer.parseInt(clickCode[1]) * 1000));
 				delay(_config.autoClickConfig.delay);
 			}
 			delay(Math.abs(50));

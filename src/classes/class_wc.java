@@ -74,9 +74,13 @@ public final class class_wc extends class_aae {
 						"Bật/tắt auto đánh", "Chế độ focus" },
 				{ "Bản thân", "Hành trang", "Kỹ năng", "Tiềm năng", "Trang bị", "Thông tin", "Trang bị thú", "Cây thần",
 						"Cổ vật", "Khác" },
-				{ "Nap Xu" }, { "Nhiệm vụ" }, { "Đồ sát" }, { "Khác", "Tin nhắn", "Nhóm", "Bạn bè", "Top cao thủ",
-						"Top đại gia", "Bảng Top", "Kênh thế giới", "Diễn đàn", "Rời bang" },
-				{ "" }, { "Cửa hàng" }, { "Thoát" } };
+				{ "Nap Xu" },
+				{ "Nhiệm vụ" },
+				{ "Đồ sát" },
+				{ "Khác", "Tin nhắn", "Nhóm", "Bạn bè", "Top cao thủ", "Top đại gia", "Bảng Top", "Kênh thế giới", "Diễn đàn", "Rời bang" },
+				{ "" },
+				{ "Cửa hàng" }, 
+				{ "Thoát" } };
 		this.b = 0;
 		this.e = -1;
 		this.r = false;
