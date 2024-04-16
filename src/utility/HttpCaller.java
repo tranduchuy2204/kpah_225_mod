@@ -12,11 +12,11 @@ import exeption.GlobalException;
 
 public class HttpCaller {
 	private String url;
-	private HttpHandler handler;
+	private RequestHandler handler;
 	private String requestData;
 	private String method = HttpConnection.GET;
 
-	public HttpCaller(String url, String requestData, HttpHandler handler) {
+	public HttpCaller(String url, String requestData, RequestHandler handler) {
 		this.url = url;
 		this.handler = handler;
 		this.requestData = requestData;

@@ -1,6 +1,6 @@
 package utility;
 
-public interface HttpHandler {
+public interface RequestHandler {
 	void requestFailed(String message);
 
 	void requestInterrupted(String message);
