@@ -12,7 +12,7 @@ public class Config {
 	public static final String CONFIG_RECORD_NAME = "global_config";
 	public AutoChatConfig autoChatConfig = new AutoChatConfig();
 	public AutoClickConfig autoClickConfig = new AutoClickConfig();
-	public PaintConfig paintConfig = new PaintConfig();
+	public DrawConfig drawConfig = new DrawConfig();
 
 	public boolean isBlockNoti = false;
 	public long gameSpeed = 40;
@@ -34,14 +34,14 @@ public class Config {
 		public int activeKey = 35;
 	}
 
-	public class PaintConfig {
-		public boolean isPaintID = true;
-		public boolean isPaintAttackPoint = true;
-		public boolean isPaintBalance = true;
-		public boolean isPaintDoBen = true;
-		public boolean isPaintCurrentPosition = true;
-		public boolean isPaintSavedPosition = true;
-		public boolean isPaintExpPlus = true;
+	public class DrawConfig {
+		public boolean isDrawUserId = true;
+		public boolean isDrawAttackPoint = true;
+		public boolean isDrawBalance = true;
+		public boolean isDrawDoBen = true;
+		public boolean isDrawCurrentPosition = true;
+		public boolean isDrawSavedPosition = true;
+		public boolean isDrawExpPlus = true;
 	}
 
 //	public class FocusConfig {
@@ -93,13 +93,13 @@ public class Config {
 				_config.autoClickConfig.delay = dis.readInt();
 				_config.autoClickConfig.activeKey = dis.readInt();
 				// read paint configuration
-				_config.paintConfig.isPaintID = dis.readBoolean();
-				_config.paintConfig.isPaintAttackPoint = dis.readBoolean();
-				_config.paintConfig.isPaintBalance = dis.readBoolean();
-				_config.paintConfig.isPaintDoBen = dis.readBoolean();
-				_config.paintConfig.isPaintCurrentPosition = dis.readBoolean();
-				_config.paintConfig.isPaintSavedPosition = dis.readBoolean();
-				_config.paintConfig.isPaintExpPlus = dis.readBoolean();
+				_config.drawConfig.isDrawUserId = dis.readBoolean();
+				_config.drawConfig.isDrawAttackPoint = dis.readBoolean();
+				_config.drawConfig.isDrawBalance = dis.readBoolean();
+				_config.drawConfig.isDrawDoBen = dis.readBoolean();
+				_config.drawConfig.isDrawCurrentPosition = dis.readBoolean();
+				_config.drawConfig.isDrawSavedPosition = dis.readBoolean();
+				_config.drawConfig.isDrawExpPlus = dis.readBoolean();
 
 //				_config.isAutoRemoveDa = dis.readBoolean();
 //				_config.isAutoRemoveTranh = dis.readBoolean();
@@ -144,13 +144,13 @@ public class Config {
 			dos.writeInt(autoClickConfig.delay);
 			dos.writeInt(autoClickConfig.activeKey);
 			// paint
-			dos.writeBoolean(paintConfig.isPaintID);
-			dos.writeBoolean(paintConfig.isPaintAttackPoint);
-			dos.writeBoolean(paintConfig.isPaintBalance);
-			dos.writeBoolean(paintConfig.isPaintDoBen);
-			dos.writeBoolean(paintConfig.isPaintCurrentPosition);
-			dos.writeBoolean(paintConfig.isPaintSavedPosition);
-			dos.writeBoolean(paintConfig.isPaintExpPlus);
+			dos.writeBoolean(drawConfig.isDrawUserId);
+			dos.writeBoolean(drawConfig.isDrawAttackPoint);
+			dos.writeBoolean(drawConfig.isDrawBalance);
+			dos.writeBoolean(drawConfig.isDrawDoBen);
+			dos.writeBoolean(drawConfig.isDrawCurrentPosition);
+			dos.writeBoolean(drawConfig.isDrawSavedPosition);
+			dos.writeBoolean(drawConfig.isDrawExpPlus);
 
 //			dos.writeBoolean(isAutoRemoveDa);
 //			dos.writeBoolean(isAutoRemoveTranh);

@@ -12,7 +12,7 @@ import javax.microedition.lcdui.Display;
 import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Form;
 
-import config.Config.PaintConfig;
+import config.Config.DrawConfig;
 
 /**
  *
@@ -42,39 +42,39 @@ public class Setting {
 	}
 
 	void setPaintOption(ChoiceGroup cg) {
-		PaintConfig paintCf = ModController.globalConfig.paintConfig;
-		if (paintCf.isPaintID) {
+		DrawConfig paintCf = ModController.globalConfig.drawConfig;
+		if (paintCf.isDrawUserId) {
 			cg.setSelectedIndex(0, true);
 		}
-		if (paintCf.isPaintAttackPoint) {
+		if (paintCf.isDrawAttackPoint) {
 			cg.setSelectedIndex(1, true);
 		}
-		if (paintCf.isPaintBalance) {
+		if (paintCf.isDrawBalance) {
 			cg.setSelectedIndex(2, true);
 		}
-		if (paintCf.isPaintDoBen) {
+		if (paintCf.isDrawDoBen) {
 			cg.setSelectedIndex(3, true);
 		}
-		if (paintCf.isPaintCurrentPosition) {
+		if (paintCf.isDrawCurrentPosition) {
 			cg.setSelectedIndex(4, true);
 		}
-		if (paintCf.isPaintSavedPosition) {
+		if (paintCf.isDrawSavedPosition) {
 			cg.setSelectedIndex(5, true);
 		}
-		if (paintCf.isPaintExpPlus) {
+		if (paintCf.isDrawExpPlus) {
 			cg.setSelectedIndex(6, true);
 		}
 	}
 
 	void readPaintOption(ChoiceGroup cg) {
-		PaintConfig paintCf = ModController.globalConfig.paintConfig;
-		paintCf.isPaintID = cg.isSelected(0);
-		paintCf.isPaintAttackPoint = cg.isSelected(1);
-		paintCf.isPaintBalance = cg.isSelected(2);
-		paintCf.isPaintDoBen = cg.isSelected(3);
-		paintCf.isPaintCurrentPosition = cg.isSelected(4);
-		paintCf.isPaintSavedPosition = cg.isSelected(5);
-		paintCf.isPaintExpPlus = cg.isSelected(6);
+		DrawConfig paintCf = ModController.globalConfig.drawConfig;
+		paintCf.isDrawUserId = cg.isSelected(0);
+		paintCf.isDrawAttackPoint = cg.isSelected(1);
+		paintCf.isDrawBalance = cg.isSelected(2);
+		paintCf.isDrawDoBen = cg.isSelected(3);
+		paintCf.isDrawCurrentPosition = cg.isSelected(4);
+		paintCf.isDrawSavedPosition = cg.isSelected(5);
+		paintCf.isDrawExpPlus = cg.isSelected(6);
 	}
 
 	public void generalFormConfig() {
