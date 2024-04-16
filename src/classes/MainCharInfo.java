@@ -8,8 +8,21 @@ public class MainCharInfo {
 		return class_acv.s.q.a_();
 	}
 
-	public static int getDoBen() {
-		return ModController.getDoBen();
+	/**
+	 * Hàm lấy độ bền vũ khí
+	 * 
+	 * @return -> độ bền vũ khí
+	 */
+	public static final int getDoBen() {
+		for (int i1 = 0; i1 < ((class_hw) class_acv.s.q).aT.size(); i1++) {
+			class_ql localclass_ql = (class_ql) ((class_hw) class_acv.s.q).aT.elementAt(i1);
+			class_yc localclass_yc = class_yi.b((int) localclass_ql.r);
+			if (((localclass_yc.c == 3) || (localclass_yc.c == 4) || (localclass_yc.c == 5) || (localclass_yc.c == 6)
+					|| (localclass_yc.c == 7)) && (localclass_ql.v > 0)) {
+				return localclass_ql.u;
+			}
+		}
+		return 0;
 	}
 
 	public static long getCurrentCoin() {
@@ -17,7 +30,7 @@ public class MainCharInfo {
 	}
 
 	public static int getCurrentGold() {
-		return class_acv.s.q.aV; 
+		return class_acv.s.q.aV;
 	}
 
 	public static int getCurrentLockGold() {

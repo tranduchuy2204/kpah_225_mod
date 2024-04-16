@@ -54,6 +54,27 @@ public class Menu {
 
 	public void specialMenu() {
 		Vector vector = new Vector();
+		vector.addElement(new class_s("Quick Action", new IAction() {
+			public void perform() {
+				Vector quickActionMenu = new Vector();
+				quickActionMenu.addElement(new class_s("Bỏ đá, tranh, auto cây", new IAction() {
+					public void perform() {
+						ModController.globalConfig.isAutoCayThan = ModController.globalConfig.isAutoRemoveDa = ModController.globalConfig.isAutoRemoveTranh = true;
+					}
+				}));
+				quickActionMenu.addElement(new class_s("Bỏ đá, auto cây", new IAction() {
+					public void perform() {
+						ModController.globalConfig.isAutoCayThan = ModController.globalConfig.isAutoRemoveDa = true;
+					}
+				}));
+				quickActionMenu.addElement(new class_s("Tắt hết", new IAction() {
+					public void perform() {
+						ModController.globalConfig.isAutoCayThan = ModController.globalConfig.isAutoRemoveDa = ModController.globalConfig.isAutoRemoveTranh = false;
+					}
+				}));
+				class_acv.u.a(quickActionMenu, 3);
+			}
+		}));
 		vector.addElement(new class_s("Xa phu", new class_om(class_acv.s)));
 		vector.addElement(new class_s("Quick NPC", new IAction() {
 			public void perform() {

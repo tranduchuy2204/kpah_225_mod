@@ -15,6 +15,10 @@ public class Config {
 	public PaintConfig paintConfig = new PaintConfig();
 	public boolean isBlockNoti = false;
 	public long gameSpeed = 40;
+	public boolean isAutoRemoveDa;
+	public boolean isAutoRemoveTranh;
+	public boolean isAutoCayThan;
+	public boolean isLiaQuai; // Chức năng này là cái gì ?
 
 	public class AutoChatConfig {
 		public String content = "KPAH TEAMOBI";
@@ -87,6 +91,12 @@ public class Config {
 				_config.paintConfig.isPaintBalance = dis.readBoolean();
 				_config.paintConfig.isPaintDoBen = dis.readBoolean();
 				_config.paintConfig.isPaintCurrentPosition = dis.readBoolean();
+
+//				_config.isAutoRemoveDa = dis.readBoolean();
+//				_config.isAutoRemoveTranh = dis.readBoolean();
+//				_config.isAutoCayThan = dis.readBoolean();
+//				_config.isLiaQuai = dis.readBoolean();
+
 				dis.close();
 				bais.close();
 
@@ -127,6 +137,12 @@ public class Config {
 			dos.writeBoolean(paintConfig.isPaintBalance);
 			dos.writeBoolean(paintConfig.isPaintDoBen);
 			dos.writeBoolean(paintConfig.isPaintCurrentPosition);
+			
+//			dos.writeBoolean(isAutoRemoveDa);
+//			dos.writeBoolean(isAutoRemoveTranh);
+//			dos.writeBoolean(isAutoCayThan);
+//			dos.writeBoolean(isLiaQuai);
+			
 			ResUtils.saveRecordBytes(CONFIG_RECORD_NAME, baos.toByteArray());
 			dos.flush();
 		} catch (IOException e) {

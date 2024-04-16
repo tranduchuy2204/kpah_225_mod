@@ -11,19 +11,20 @@ package classes;
  */
 public class ModHelpers {
 
-	public static String[] getMapName(int index, int id) {
-		return class_yi.e(index, id);
-	}
-
-	public static short[] getLocation(int index, int id) {
-		return class_yi.f(index, id);
+	public static String getMapNameAndPosition() {
+		return class_abj.a + "  " + class_acv.s.q.cK / 16 + ":" + class_acv.s.q.cL / 16;
 	}
 
 	public static String getOnOffStatus(boolean boo) {
 		return boo ? "Bật" : "Tắt";
 	}
 
-	public static void move(int x, int y) {
-		// removed
+	public static long currentTime() {
+		return System.currentTimeMillis() / 1000;
 	}
+
+	public static long leftTime(long time) {
+		return currentTime() - time;
+	}
+
 }

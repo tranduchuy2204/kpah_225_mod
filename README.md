@@ -22,10 +22,12 @@
 - 10/04/2024 : Hoàn thành các mod cũ lên phiên bản mới nhất
 - 13/04/2024 : Thêm chức năng chọn mutil server (teamobi, nqsh, private, vv)
 - 16/04/2024 : Thêm chức năng tính xu up được, hiện chỉ số tấn công
-- 16/04/2024 : Thêm chức năng menu npc bxh, npc sự kiện
+- 16/04/2024 : Thêm chức năng menu npc bxh, npc sự kiện (implements Dong Nguyen version)
 - 16/04/2024 : Loại bỏ các chức năng liên quan đến chỉ đầu cho đỡ rối
 - 16/04/2024 : Thêm model Config, refactor lại code
-
+- 16/04/2024 : Thêm chức năng auto cây thần (implements Dong Nguyen version)
+- 16/04/2024 : Thêm chức năng auto tranh, đá (implements Dong Nguyen version)
+- 16/04/2024 : Thêm chức năng Lia quái (implements Dong Nguyen version)
 
 ## Cài đặt
 

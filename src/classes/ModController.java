@@ -19,19 +19,54 @@ public class ModController {
 
 	protected static boolean isActiveAutoChat;
 
-	public ModController() {
-	}
-
-	public static String getMapNameAndPosition() {
-		return class_abj.a + "  " + class_acv.s.q.cK / 16 + ":" + class_acv.s.q.cL / 16;
-	}
+	public static long refeshTime = 0;
 
 	public static void update() {
-		// move speed
 		class_abj.as = 100;
+		doAutoGame();
 	}
 
-	public static void comeBackHome() {
+	private static void doAutoGame() {
+		if (ModHelpers.leftTime(refeshTime) > 180) {
+			refeshTime = ModHelpers.currentTime();
+			if (globalConfig.isAutoCayThan) {
+				for (int i = 0; i < 8; i++) {
+					class_go.a().n(i, 2);
+					class_go.a().n(i, 3);
+				}
+			}
+			if (globalConfig.isAutoRemoveDa) {
+				doRemoveStone();
+			}
+			if (globalConfig.isAutoRemoveTranh) {
+				doRemoveTranh();
+			}
+		}
+	}
+
+	/*
+	 * Bỏ Đá
+	 */
+	private static void doRemoveStone() {
+		for (int i = 159; i <= 174; i++) {
+			class_go.a().a((short) i, 0, (byte) 0);
+		}
+		for (int i = 179; i <= 226; i++) {
+			class_go.a().a((short) i, 0, (byte) 0);
+		}
+	}
+
+	private static void doRemoveTranh() {
+		for (int i = 15; i <= 23; i++) {
+			class_go.a().a((short) i, 0, (byte) 0);
+		}
+		for (int i = 28; i <= 45; i++) {
+			class_go.a().a((short) i, 0, (byte) 0);
+		}
+		class_go.a().a((short) 12, 0, (byte) 0);
+		class_go.a().a((short) 13, 0, (byte) 0);
+		class_go.a().a((short) 58, 0, (byte) 0);
+		class_go.a().a((short) 59, 0, (byte) 0);
 	}
 
 	public static void xaPhu() {
@@ -54,43 +89,7 @@ public class ModController {
 		class_yv.a().d();
 	}
 
-//	public static boolean isPointed(String listName) {
-//		String[] strings = StringUtils.split(listName, ",");
-//		for (int i = 0; i < strings.length; i++) {
-//			String string = strings[i];
-//			if (VNCharacterUtils.removeAccent(class_acv.s.r.a_()).equalsIgnoreCase(string)) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
-//
-//	public static boolean isExistedId(String arr, String id) {
-//		String[] strings = StringUtils.split(arr, ",");
-//		for (int i = 0; i < strings.length; i++) {
-//			String string = strings[i];
-//			if (VNCharacterUtils.removeAccent(class_acv.s.r.a_())
-//					.equalsIgnoreCase(VNCharacterUtils.removeAccent(string))) {
-//				return true;
-//			}
-//		}
-//		return false;
-//	}
-
-	public static final int getDoBen() {
-		for (int i1 = 0; i1 < ((class_hw) class_acv.s.q).aT.size(); i1++) {
-			class_ql localclass_ql = (class_ql) ((class_hw) class_acv.s.q).aT.elementAt(i1);
-			class_yc localclass_yc = class_yi.b((int) localclass_ql.r);
-			if (((localclass_yc.c == 3) || (localclass_yc.c == 4) || (localclass_yc.c == 5) || (localclass_yc.c == 6)
-					|| (localclass_yc.c == 7)) && (localclass_ql.v > 0)) {
-				return localclass_ql.u;
-			}
-		}
-		return 0;
-	}
-
 	public static void onStartGame() {
-
 		AccountManager.getInstance().loadByRecord();
 	}
 }

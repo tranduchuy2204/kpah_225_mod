@@ -29,7 +29,7 @@ public class Paint {
 				class_d.b.a(_graphics, "Tấn công: " + MainCharInfo.getAttackPoints(), 1, xPos += 12, 0);
 			}
 			if (ModController.globalConfig.paintConfig.isPaintCurrentPosition) {
-				class_d.b.a(_graphics, "Toạ độ: " + ModController.getMapNameAndPosition(), 1, xPos += 12, 0);
+				class_d.b.a(_graphics, "Toạ độ: " + ModHelpers.getMapNameAndPosition(), 1, xPos += 12, 0);
 			}
 			class_d.b.a(_graphics, "Xu kiếm được: " + MainCharInfo.getCoinsEarned(), 1, xPos += 12, 0);
 		}
