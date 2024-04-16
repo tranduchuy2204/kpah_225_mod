@@ -47,13 +47,13 @@ public class MainCharInfo {
 	 * Lấy xu up được
 	 */
 	public static long getCoinsEarned() {
-		if (initialCoins == -1) {
-			return 0;
-		}
 
 		// Khởi tạo số xu ban đầu của tài khoản, điều kiện này chỉ chạy 1 lần.
 		if (initialCoins == -1 && class_acv.q == class_acv.s) {
 			initialCoins = getCoinsEarned();
+		}
+		if (initialCoins == -1) {
+			return 0;
 		}
 		// Khi đã có số xu ban đầu rồi thì việc tính xu up được bằng cách lấy xu hiện
 		// tại trừ cho số xu lúc đầu có
