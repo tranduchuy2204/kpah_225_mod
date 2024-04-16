@@ -5,5 +5,5 @@ MicroEdition-Configuration: CLDC-1.0
 MIDlet-1: Khi Phach Anh Hung,/icon.png,game.GameMidlet
 MIDlet-Name: Khi Phach Anh Hung
 MicroEdition-Profile: MIDP-2.0
-MIDlet-Jar-URL: KPAH_225.jar
+MIDlet-Jar-URL: KPAH_209.jar
 MIDlet-Jar-Size: 1236702
