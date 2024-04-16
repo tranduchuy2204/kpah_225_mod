@@ -20,7 +20,7 @@ import config.Config.AutoChatConfig;
  *
  * @author ASUS
  */
-public class Menu extends Debug {
+public class Menu {
 
 	public static Menu menu;
 
@@ -32,7 +32,6 @@ public class Menu extends Debug {
 	}
 
 	public Menu() {
-		Debug.log("Class này được tạo ra để show các menu nhỏ");
 	}
 
 	public static void showConfigMenu() {
@@ -56,7 +55,7 @@ public class Menu extends Debug {
 	public void specialMenu() {
 		Vector vector = new Vector();
 		vector.addElement(new class_s("Xa phu", new class_om(class_acv.s)));
-		vector.addElement(new class_s("NPC", new IAction() {
+		vector.addElement(new class_s("Quick NPC", new IAction() {
 			public void perform() {
 				Vector vector = new Vector();
 				vector.addElement(new class_s("Hợp BXH", new IAction() {
@@ -91,14 +90,13 @@ public class Menu extends Debug {
 				class_acv.u.a(vector, 3);
 			}
 		}));
-		vector.addElement(
-				new class_s(FunctionUtils.getOnOffStatus(!ModController.globalConfig.isBlockNoti) + " chặn thông báo",
-						new IAction() {
-							public void perform() {
-								ModController.globalConfig.isBlockNoti = !ModController.globalConfig.isBlockNoti;
-								ModController.globalConfig.saveConfig();
-							}
-						}));
+		vector.addElement(new class_s(
+				ModHelpers.getOnOffStatus(!ModController.globalConfig.isBlockNoti) + " chặn thông báo", new IAction() {
+					public void perform() {
+						ModController.globalConfig.isBlockNoti = !ModController.globalConfig.isBlockNoti;
+						ModController.globalConfig.saveConfig();
+					}
+				}));
 		class_acv.u.a(vector, 3);
 	}
 

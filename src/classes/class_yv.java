@@ -88,14 +88,19 @@ public final class class_yv extends class_aae {
 			public void perform() {
 				Vector localVector;
 				localVector = new Vector();
-				localVector.addElement(new class_s("Global", new IAction() {
+				localVector.addElement(new class_s("Teamobi", new IAction() {
 					public void perform() {
-						fetchServers("https://kpahteamobi.000webhostapp.com/servers.php?sv=global");
+						fetchServers("http://teamobi.com/srvips/NQSH2.txt");
 					}
 				}));
-				localVector.addElement(new class_s("KPAH2", new IAction() {
+				localVector.addElement(new class_s("Ngũ đế", new IAction() {
 					public void perform() {
-						fetchServers("https://kpahteamobi.000webhostapp.com/servers.php?sv=kpah2");
+						fetchServers("http://teamobi.com/srvips/ngude2.txt");
+					}
+				}));
+				localVector.addElement(new class_s("Lậu", new IAction() {
+					public void perform() {
+						fetchServers("http://sv.naska.com.vn/allsv.txt");
 					}
 				}));
 				class_acv.u.a(localVector, 0);

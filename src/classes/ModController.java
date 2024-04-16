@@ -11,7 +11,7 @@ import config.Config;
  *
  * @author ASUS
  */
-public class ModController extends Debug {
+public class ModController {
 
 	public static final String VERSION = "2.2.5";
 
@@ -20,7 +20,6 @@ public class ModController extends Debug {
 	protected static boolean isActiveAutoChat;
 
 	public ModController() {
-		Debug.log("Class này được tạo ra để chứa những hàm, biến để thực hiện mục đích mod");
 	}
 
 	public static String getMapNameAndPosition() {
@@ -33,16 +32,13 @@ public class ModController extends Debug {
 	}
 
 	public static void comeBackHome() {
-		Debug.log("Về nhà nhanh");
 	}
 
 	public static void xaPhu() {
-		Debug.log("Xa phu");
 		new class_om(class_acv.s).perform();
 	}
 
 	public static void doDownHorse() {
-		Debug.log("Xuống ngựa");
 		new class_qo(class_acv.s).perform();
 	}
 
