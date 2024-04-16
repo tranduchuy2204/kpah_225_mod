@@ -9,7 +9,7 @@ public class MainCharInfo {
 	}
 
 	public static int getDoBen() {
-		return ModScr.getDoBen();
+		return ModController.getDoBen();
 	}
 
 	public static long getCurrentCoin() {

@@ -5,11 +5,6 @@
  */
 package classes;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
 import javax.microedition.lcdui.ChoiceGroup;
 import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
@@ -17,7 +12,7 @@ import javax.microedition.lcdui.Display;
 import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Form;
 
-import utility.ResUtils;
+import config.Config.PaintConfig;
 
 /**
  *
@@ -25,59 +20,86 @@ import utility.ResUtils;
  */
 public class ConfigMod {
 
-	public static boolean[] paintSetting = { false, true, true, true, false, true };
 	public Form configForm;
+
+	int getIndexSpeedChoice(long speed) {
+		int[] speeds = { 30, 40, 70 };
+		for (int i = 0; i < speeds.length; i++) {
+			if (ModController.globalConfig.gameSpeed == speeds[i]) {
+				return i;
+			}
+		}
+		return 1;
+	}
+
+	void setGameSpeed(int index) {
+		int[] speeds = { 30, 40, 70 };
+		for (int i = 0; i < speeds.length; i++) {
+			if (i == index) {
+				ModController.globalConfig.gameSpeed = speeds[i];
+			}
+		}
+	}
+
+	void setPaintOption(ChoiceGroup cg) {
+		PaintConfig paintCf = ModController.globalConfig.paintConfig;
+		if (paintCf.isPaintID) {
+			cg.setSelectedIndex(0, true);
+		}
+		if (paintCf.isPaintAttackPoint) {
+			cg.setSelectedIndex(1, true);
+		}
+		if (paintCf.isPaintBalance) {
+			cg.setSelectedIndex(2, true);
+		}
+		if (paintCf.isPaintDoBen) {
+			cg.setSelectedIndex(3, true);
+		}
+		if (paintCf.isPaintCurrentPosition) {
+			cg.setSelectedIndex(4, true);
+		}
+	}
+
+	void readPaintOption(ChoiceGroup cg) {
+		PaintConfig paintCf = ModController.globalConfig.paintConfig;
+		paintCf.isPaintID = cg.isSelected(0);
+		paintCf.isPaintAttackPoint = cg.isSelected(1);
+		paintCf.isPaintBalance = cg.isSelected(2);
+		paintCf.isPaintDoBen = cg.isSelected(3);
+		paintCf.isPaintCurrentPosition = cg.isSelected(4);
+	}
 
 	public void generalFormConfig() {
 		configForm = new Form("Config Form");
+
 		final ChoiceGroup choiceSpeed = new ChoiceGroup("Tốc độ", ChoiceGroup.EXCLUSIVE);
+
 		choiceSpeed.append("Nhanh", null);
 		choiceSpeed.append("Gốc", null);
 		choiceSpeed.append("Chậm", null);
-		int index = 0;
-		switch ((int) class_acv.speedMod) {
-		case 25:
-			index = 0;
-			break;
-		case 40:
-			index = 1;
-			break;
-		case 70:
-			index = 2;
-			break;
-		default:
-			break;
-		}
-		choiceSpeed.setSelectedIndex(index, true);
-		final ChoiceGroup choiceGroupPaint = new ChoiceGroup("Hiển thị thông tin", ChoiceGroup.MULTIPLE);
-		choiceGroupPaint.append("Version", null);
-		choiceGroupPaint.append("Xu", null);
-		choiceGroupPaint.append("Lượng", null);
+		choiceSpeed.setSelectedIndex(getIndexSpeedChoice(ModController.globalConfig.gameSpeed), true);
+
+		final ChoiceGroup choiceGroupPaint = new ChoiceGroup("Thông tin muốn hiển thị", ChoiceGroup.MULTIPLE);
+
+		choiceGroupPaint.append("Tên nhân vật", null);
 		choiceGroupPaint.append("Tấn công", null);
+		choiceGroupPaint.append("Xu lượng", null);
 		choiceGroupPaint.append("Độ bền", null);
-		choiceGroupPaint.append("Tọa độ", null);
-		choiceGroupPaint.setSelectedFlags(paintSetting);
+		choiceGroupPaint.append("Tọa độ hiện tại", null);
+		setPaintOption(choiceGroupPaint);
+
 		configForm.append(choiceSpeed);
 		configForm.append(choiceGroupPaint);
 		configForm.addCommand(new Command("Lưu", Command.OK, 1));
 		configForm.addCommand(new Command("Exit", Command.CANCEL, 1));
+
 		configForm.setCommandListener(new CommandListener() {
 			public void commandAction(Command c, Displayable d) {
 				if (c.getCommandType() == 4) {
 					int selectedIndex = choiceSpeed.getSelectedIndex();
-					switch (selectedIndex) {
-					case 0:
-						class_acv.speedMod = 25;
-						break;
-					case 1:
-						class_acv.speedMod = 40;
-						break;
-					default:
-						class_acv.speedMod = 70;
-						break;
-					}
-					choiceGroupPaint.getSelectedFlags(paintSetting);
-					saveConfig();
+					setGameSpeed(selectedIndex);
+					readPaintOption(choiceGroupPaint);
+					ModController.globalConfig.saveConfig();
 				}
 				Display.getDisplay(game.GameMidlet.a).setCurrent(class_acv.a);
 			}
@@ -85,38 +107,4 @@ public class ConfigMod {
 		Display.getDisplay(game.GameMidlet.a).setCurrent(configForm);
 	}
 
-	public static void saveConfig() {
-		try {
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			DataOutputStream dos = new DataOutputStream(baos);
-			dos.writeLong(class_acv.speedMod);
-			for (int i = 0; i < paintSetting.length; i++) {
-				dos.writeBoolean(paintSetting[i]);
-			}
-			ResUtils.saveRecordBytes("configMod", baos.toByteArray());
-			dos.flush();
-			dos.close();
-			baos.flush();
-			baos.close();
-		} catch (IOException e) {
-		}
-	}
-
-	public static void loadConfig() {
-		final byte[] bs;
-		if ((bs = ResUtils.loadRecordBytes("configMod")) != null) {
-			try {
-				ByteArrayInputStream bais = new ByteArrayInputStream(bs);
-				DataInputStream dis = new DataInputStream(bais);
-				class_acv.speedMod = dis.readLong();
-				for (int i = 0; i < paintSetting.length; i++) {
-					paintSetting[i] = dis.readBoolean();
-				}
-				dis.close();
-				bais.close();
-			} catch (IOException ex) {
-				ex.printStackTrace();
-			}
-		}
-	}
 }

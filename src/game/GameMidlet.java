@@ -14,7 +14,7 @@ import javax.microedition.midlet.MIDlet;
 
 import classes.AccountManager;
 import classes.IAction;
-import classes.ModScr;
+import classes.ModController;
 import classes.class_aco;
 import classes.class_acv;
 import classes.class_bi;
@@ -36,7 +36,7 @@ public class GameMidlet extends MIDlet {
 	public static int h;
 
 	static {
-		GameMidlet.b = ModScr.VERSION;
+		GameMidlet.b = ModController.VERSION;
 		GameMidlet.c = "0";
 		GameMidlet.d = "-1";
 		GameMidlet.e = "-1";

@@ -14,7 +14,6 @@ import javax.microedition.lcdui.Image;
 
 public final class class_acv extends Canvas implements Runnable, CommandListener {
 
-	public static long speedMod = 40;
 	public static class_acv a;
 	private static boolean N;
 	public static boolean b;
@@ -242,8 +241,8 @@ public final class class_acv extends Canvas implements Runnable, CommandListener
 				}
 				final long n = System.currentTimeMillis() - currentTimeMillis;
 				try {
-					if (n < speedMod) {
-						Thread.sleep(speedMod - n);
+					if (n < ModController.globalConfig.gameSpeed) {
+						Thread.sleep(ModController.globalConfig.gameSpeed - n);
 					} else {
 						Thread.sleep(1L);
 					}

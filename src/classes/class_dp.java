@@ -1,6 +1,7 @@
 package classes;
 
 import java.util.Vector;
+
 import javax.microedition.lcdui.Graphics;
 
 public final class class_dp extends class_bg {
@@ -50,77 +51,77 @@ public final class class_dp extends class_bg {
 			System.out.println(class_s.a);
 			if (class_s.a.equalsIgnoreCase("Mời party")) {
 				final class_abj class_abj = class_acv.s;
-				paramVector.insertElementAt(new class_s("Advanced", new IAction() {
-					public void perform() {
-						Vector vector = new Vector();
-						vector.addElement(new class_s("Push d.s giao thẻ", new IAction() {
-							public void perform() {
-								if (ModScr.isExistedId(ModScr.pointList[0], class_abj.r.a_())) {
-									class_acv.a("Đã có id này trong danh sách");
-									return;
-								}
-								String temp = "";
-								if (ModScr.pointList[0].length() != 0) {
-									temp += ",";
-								}
-								temp += class_abj.r.a_().toLowerCase();
-								ModScr.pointList[0] += temp;
-								class_acv.a("Đã thêm " + class_abj.r.a_() + " vào danh sách người giao thẻ");
-								Menu.gI().saveFocusList();
-							}
-						}));
-						vector.addElement(new class_s("Push d.s phá thẻ", new IAction() {
-							public void perform() {
-								if (ModScr.isExistedId(ModScr.pointList[1], class_abj.r.a_())) {
-									class_acv.a("Đã có id này trong danh sách");
-									return;
-								}
-								String temp = "";
-								if (ModScr.pointList[1].length() != 0) {
-									temp += ",";
-								}
-								temp += class_abj.r.a_().toLowerCase();
-								ModScr.pointList[1] += temp;
-								class_acv.a("Đã thêm " + class_abj.r.a_() + " vào danh sách người phá thẻ");
-								Menu.gI().saveFocusList();
-							}
-						}));
-						vector.addElement(new class_s("Push d.s up lan", new IAction() {
-							public void perform() {
-								if (ModScr.isExistedId(ModScr.pointList[2], class_abj.r.a_())) {
-									class_acv.a("Đã có id này trong danh sách");
-									return;
-								}
-								String temp = "";
-								if (ModScr.pointList[2].length() != 0) {
-									temp += ",";
-								}
-								temp += class_abj.r.a_().toLowerCase();
-								ModScr.pointList[2] += temp;
-								class_acv.a("Đã thêm " + class_abj.r.a_() + " vào danh sách người up lan");
-								Menu.gI().saveFocusList();
-							}
-						}));
-						vector.addElement(new class_s("Push d.s né", new IAction() {
-							public void perform() {
-								if (ModScr.isExistedId(ModScr.pointList[5], class_abj.r.a_())) {
-									class_acv.a("Đã có id này trong danh sách");
-									return;
-								}
-								String temp = "";
-								if (ModScr.pointList[5].length() != 0) {
-									temp += ",";
-								}
-								temp += class_abj.r.a_().toLowerCase();
-								ModScr.pointList[5] += temp;
-								class_acv.a("Đã thêm " + class_abj.r.a_() + " vào danh sách người chơi cần né");
-								Menu.gI().saveFocusList();
-							}
-						}));
-
-						class_acv.u.a(vector, 2);
-					}
-				}), 1);
+//				paramVector.insertElementAt(new class_s("Advanced", new IAction() {
+//					public void perform() {
+//						Vector vector = new Vector();
+//						vector.addElement(new class_s("Push d.s giao thẻ", new IAction() {
+//							public void perform() {
+//								if (ModController.isExistedId(ModController.pointList[0], class_abj.r.a_())) {
+//									class_acv.a("Đã có id này trong danh sách");
+//									return;
+//								}
+//								String temp = "";
+//								if (ModController.pointList[0].length() != 0) {
+//									temp += ",";
+//								}
+//								temp += class_abj.r.a_().toLowerCase();
+//								ModController.pointList[0] += temp;
+//								class_acv.a("Đã thêm " + class_abj.r.a_() + " vào danh sách người giao thẻ");
+//								Menu.gI().saveFocusList();
+//							}
+//						}));
+//						vector.addElement(new class_s("Push d.s phá thẻ", new IAction() {
+//							public void perform() {
+//								if (ModController.isExistedId(ModController.pointList[1], class_abj.r.a_())) {
+//									class_acv.a("Đã có id này trong danh sách");
+//									return;
+//								}
+//								String temp = "";
+//								if (ModController.pointList[1].length() != 0) {
+//									temp += ",";
+//								}
+//								temp += class_abj.r.a_().toLowerCase();
+//								ModController.pointList[1] += temp;
+//								class_acv.a("Đã thêm " + class_abj.r.a_() + " vào danh sách người phá thẻ");
+//								Menu.gI().saveFocusList();
+//							}
+//						}));
+//						vector.addElement(new class_s("Push d.s up lan", new IAction() {
+//							public void perform() {
+//								if (ModController.isExistedId(ModController.pointList[2], class_abj.r.a_())) {
+//									class_acv.a("Đã có id này trong danh sách");
+//									return;
+//								}
+//								String temp = "";
+//								if (ModController.pointList[2].length() != 0) {
+//									temp += ",";
+//								}
+//								temp += class_abj.r.a_().toLowerCase();
+//								ModController.pointList[2] += temp;
+//								class_acv.a("Đã thêm " + class_abj.r.a_() + " vào danh sách người up lan");
+//								Menu.gI().saveFocusList();
+//							}
+//						}));
+//						vector.addElement(new class_s("Push d.s né", new IAction() {
+//							public void perform() {
+//								if (ModController.isExistedId(ModController.pointList[5], class_abj.r.a_())) {
+//									class_acv.a("Đã có id này trong danh sách");
+//									return;
+//								}
+//								String temp = "";
+//								if (ModController.pointList[5].length() != 0) {
+//									temp += ",";
+//								}
+//								temp += class_abj.r.a_().toLowerCase();
+//								ModController.pointList[5] += temp;
+//								class_acv.a("Đã thêm " + class_abj.r.a_() + " vào danh sách người chơi cần né");
+//								Menu.gI().saveFocusList();
+//							}
+//						}));
+//
+//						class_acv.u.a(vector, 2);
+//					}
+//				}), 1);
 				break;
 			}
 		}

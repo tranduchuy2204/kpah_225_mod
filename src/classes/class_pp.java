@@ -7,9 +7,6 @@ package classes;
 
 import javax.microedition.lcdui.Graphics;
 
-import utility.StringUtils;
-import utility.VNCharacterUtils;
-
 /**
  *
  * @author ASUS
@@ -38,7 +35,6 @@ public final class class_pp extends class_hc {
 
 	public final void a(String paramString, class_s paramclass_s1, class_s paramclass_s2, class_s paramclass_s3) {
 		this.notiContent = paramString;
-		System.out.println(paramString + " - " + ModScr.blockMode);
 		if (paramString.indexOf("chỉ có thể vào lại game sau") != -1) {
 			paramclass_s1 = new class_s("OK", new class_aaw(class_acv.s));
 		}
@@ -131,19 +127,8 @@ public final class class_pp extends class_hc {
 	}
 
 	public final void b() {
-		if (ModScr.blockMode > (byte) 0) {
-			if (ModScr.blockMode == (byte) 1) {
-				class_acv.w = null;
-			}
-			String[] strings = StringUtils.split(ModScr.blockContent, ",");
-			System.out.println(this.notiContent.toLowerCase());
-
-			for (int s = 0; s < strings.length; s++) {
-				String string = strings[s];
-				if (VNCharacterUtils.removeAccent(this.notiContent.toLowerCase()).indexOf(string) != -1) {
-					class_acv.w = null;
-				}
-			}
+		if (ModController.globalConfig.isBlockNoti) {
+			class_acv.w = null;
 		}
 		this.d += 1;
 		if (this.d > 3) {

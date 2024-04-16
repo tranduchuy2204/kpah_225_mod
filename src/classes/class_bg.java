@@ -91,7 +91,7 @@ public abstract class class_bg {
 				}
 			}
 		}
-		ModScr.update();
+		ModController.update();
 		if (class_acv.c[5]) {
 			if ((this.bb != null) && (this.bb.b != null)) {
 				this.bb.b.perform();

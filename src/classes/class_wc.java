@@ -68,20 +68,15 @@ public final class class_wc extends class_aae {
 	}
 
 	private class_wc() {
-		this.k = new String[][] { 
-			{ "Menu Premium", "Special", "Load Map", "Chỉ Đầu", "Xuống Ngựa", "Auto Chat", "Khác", "Đăng Xuất" },
-			{ "Cài đặt", "Cấu hình", "Bản đồ lớn", "Bật/tắt giao diện", "Hướng dẫn", "âm thanh", "Bật/tắt lời mời",
+		this.k = new String[][] {
+				{ "Menu Premium", "Special", "Config Mod", "Chỉ Đầu", "Xuống Ngựa", "Auto Chat", "Khác", "Đăng Xuất" },
+				{ "Cài đặt", "Cấu hình", "Bản đồ lớn", "Bật/tắt giao diện", "Hướng dẫn", "âm thanh", "Bật/tắt lời mời",
 						"Bật/tắt auto đánh", "Chế độ focus" },
-			{ "Bản thân", "Hành trang", "Kỹ năng", "Tiềm năng", "Trang bị", "Thông tin", "Trang bị thú", "Cây thần",
+				{ "Bản thân", "Hành trang", "Kỹ năng", "Tiềm năng", "Trang bị", "Thông tin", "Trang bị thú", "Cây thần",
 						"Cổ vật", "Khác" },
-			{ "Nap Xu" },
-			{ "Nhiệm vụ" },
-			{ "Đồ sát" },
-			{ "Khác", "Tin nhắn", "Nhóm", "Bạn bè", "Top cao thủ",
+				{ "Nap Xu" }, { "Nhiệm vụ" }, { "Đồ sát" }, { "Khác", "Tin nhắn", "Nhóm", "Bạn bè", "Top cao thủ",
 						"Top đại gia", "Bảng Top", "Kênh thế giới", "Diễn đàn", "Rời bang" },
-			{ "" },
-			{ "Cửa hàng" }, 
-			{"Thoát"} };
+				{ "" }, { "Cửa hàng" }, { "Thoát" } };
 		this.b = 0;
 		this.e = -1;
 		this.r = false;
@@ -196,7 +191,7 @@ public final class class_wc extends class_aae {
 		}
 		super.c();
 	}
-	
+
 	private void showStore() {
 		int n = 0;
 		for (int i = 0; i < class_yi.f.size(); ++i) {
@@ -212,7 +207,7 @@ public final class class_wc extends class_aae {
 		class_nu.a().a(0, true, array);
 		class_nu.a().d();
 	}
-	
+
 	private void g() {
 		if (this.e == -1) {
 			if (this.k[this.b].length == 1) {
@@ -261,7 +256,7 @@ public final class class_wc extends class_aae {
 		}
 		switch (this.b) {
 		case 0: {
-			if(this.e == 0) {
+			if (this.e == 0) {
 				Menu.gI().specialMenu();
 				return;
 			}
@@ -287,8 +282,8 @@ public final class class_wc extends class_aae {
 			break;
 		}
 		case 1: {
-			if(this.e == 0) {
-				Menu.showChangeMapMenu();
+			if (this.e == 0) {
+				Menu.showConfigMenu();
 				return;
 			}
 
@@ -338,7 +333,8 @@ public final class class_wc extends class_aae {
 		}
 		case 2: {
 			if (this.e == 0) {
-				Menu.gI().showPointerMenu();
+//				Menu.gI().showPointerMenu();
+				class_acv.a("Chức năng đã được loại bỏ!");
 				return;
 			}
 			if (this.e == 1) {
@@ -381,7 +377,7 @@ public final class class_wc extends class_aae {
 		}
 		case 3: {
 			if (this.e == 0) {
-				ModScr.doDownHorse();
+				ModController.doDownHorse();
 				return;
 			}
 			if (this.e == 1) {
@@ -469,8 +465,8 @@ public final class class_wc extends class_aae {
 		}
 		case 6: {
 			if (this.e == 0) {
-				// do logout game 
-				ModScr.logOut();
+				// do logout game
+				ModController.logOut();
 				return;
 			}
 			if (this.e == 7) {
