@@ -13,13 +13,15 @@
 
 **Platform:** J2ME
 
-
+## Tải về
+- Phần này dành cho người dùng không code
+- Để tải về các bạn vào deployed/DefaultColorPhone để tải file .jar -> chọn raw là nó tải về
 
 ## Chức năng
 
 - 10/04/2024 : Hoàn thành các mod cũ lên phiên bản mới nhất
 - 13/04/2024 : Thêm chức năng chọn mutil server (teamobi, nqsh, private, vv)
-- 16/04/2024 : Thêm chức năng tính xu up được
+- 16/04/2024 : Thêm chức năng tính xu up được, hiện chỉ số tấn công
 
 
 ## Cài đặt
