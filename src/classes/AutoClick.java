@@ -75,30 +75,34 @@ public class AutoClick implements IAction, Runnable {
 		form.setCommandListener(new CommandListener() {
 
 			public void commandAction(Command cmd, Displayable arg1) {
-				if (cmd.getCommandType() == 4) {
-					String[] keyboardCodes = StringUtils.split(keyBoardCodesTF.getString(), ",");
-					for (int i = 0; i < keyboardCodes.length; i++) {
-						String[] clickCode = StringUtils.split(keyboardCodes[i], ":");
-						for (int j = 0; j < clickCode.length; j++) {
-							if (!isNumber(clickCode[j]) || keyboardCodes[i].indexOf(":") == -1) {
-								Display.getDisplay(game.GameMidlet.a).setCurrent(
-										new Alert("Cảnh báo", "Mã phím không hợp lệ", null, AlertType.ERROR));
-								return;
+				try {
+					if (cmd.getCommandType() == 4) {
+						String[] keyboardCodes = StringUtils.split(keyBoardCodesTF.getString(), ",");
+						for (int i = 0; i < keyboardCodes.length; i++) {
+							String[] clickCode = StringUtils.split(keyboardCodes[i], ":");
+							for (int j = 0; j < clickCode.length; j++) {
+								if (!isNumber(clickCode[j]) || keyboardCodes[i].indexOf(":") == -1) {
+									Display.getDisplay(game.GameMidlet.a).setCurrent(
+											new Alert("Cảnh báo", "Mã phím không hợp lệ", null, AlertType.ERROR));
+									return;
+								}
 							}
 						}
+						if (!isNumber(activeKeyTF.getString())) {
+							Display.getDisplay(game.GameMidlet.a).setCurrent(
+									new Alert("Cảnh báo", "Phím kích hoạt không hợp lệ", null, AlertType.ERROR));
+							return;
+						}
+						_config.autoClickConfig.keyBoardCodes = keyBoardCodesTF.getString();
+						_config.autoClickConfig.activeKey = Integer.parseInt(activeKeyTF.getString());
+						_config.autoClickConfig.delay = Integer.parseInt(delayTF.getString());
+						_config.saveConfig();
 					}
-					if (!isNumber(activeKeyTF.getString())) {
-						Display.getDisplay(game.GameMidlet.a).setCurrent(
-								new Alert("Cảnh báo", "Phím kích hoạt không hợp lệ", null, AlertType.ERROR));
-						return;
-					}
-					_config.autoClickConfig.keyBoardCodes = keyBoardCodesTF.getString();
-					_config.autoClickConfig.activeKey = Integer.parseInt(activeKeyTF.toString());
-					_config.autoClickConfig.delay = Integer.parseInt(delayTF.toString());
-					_config.saveConfig();
+					isRunning = false;
+					Display.getDisplay(game.GameMidlet.a).setCurrent(class_acv.a);
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
-				isRunning = false;
-				Display.getDisplay(game.GameMidlet.a).setCurrent(class_acv.a);
 			}
 		});
 		Display.getDisplay(game.GameMidlet.a).setCurrent(form);
