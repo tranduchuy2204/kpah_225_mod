@@ -27,7 +27,7 @@ public abstract class class_bg {
 		if (class_act.b > 0) {
 			paramGraphics.drawImage(class_yi.G, class_acv.m - 7, 7, 3);
 		}
-		if ((class_abj.al.size() <= 0) && (bd != null)) {
+		if ((MapScreen.al.size() <= 0) && (bd != null)) {
 			paramGraphics.drawImage(bd, class_acv.o, 0, 17);
 		}
 

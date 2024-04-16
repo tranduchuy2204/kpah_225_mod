@@ -132,8 +132,8 @@ public final class class_yv extends class_aae {
 	}
 
 	public final void e() {
-		class_abj.j = class_abj.h;
-		class_abj.k = class_abj.i;
+		MapScreen.j = MapScreen.h;
+		MapScreen.k = MapScreen.i;
 		class_yv.p = (class_yv.o = 0);
 		class_yv.a = 0;
 		if ((class_yv.s = (class_yv.b.length << 4) - (this.n - 10)) < 0) {
@@ -289,14 +289,14 @@ public final class class_yv extends class_aae {
 		}
 		this.j = class_yg.b(this.i) * this.l >> 10;
 		this.k = class_yg.a(this.i) * this.l >> 10;
-		class_abj.h = this.j + 380;
-		class_abj.i = this.k + 380;
+		MapScreen.h = this.j + 380;
+		MapScreen.i = this.k + 380;
 		class_acv.s.g();
 	}
 
 	public static void b(final Graphics graphics) {
 		class_acv.a(graphics);
-		graphics.translate(-class_abj.j, -class_abj.k);
+		graphics.translate(-MapScreen.j, -MapScreen.k);
 		class_ls.a(graphics);
 		class_ls.b(graphics);
 	}

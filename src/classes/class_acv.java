@@ -34,7 +34,7 @@ public final class class_acv extends Canvas implements Runnable, CommandListener
 	private static boolean O;
 	public static class_aae q;
 	public static boolean r;
-	public static class_abj s;
+	public static MapScreen s;
 	public static Random t;
 	public static class_dp u;
 	public static class_xw v;
@@ -136,7 +136,7 @@ public final class class_acv extends Canvas implements Runnable, CommandListener
 	}
 
 	public final void c() {
-		class_acv.s = new class_abj();
+		class_acv.s = new MapScreen();
 		class_acv.v = new class_xw();
 		class_acv.y = new class_gy();
 		class_acv.J = new class_kj();
@@ -596,7 +596,7 @@ public final class class_acv extends Canvas implements Runnable, CommandListener
 				}
 				// monitorexit(class_acv.R)
 			}
-			class_abj.c(graphics);
+			MapScreen.c(graphics);
 		} catch (Exception ex) {
 		}
 		a(graphics);

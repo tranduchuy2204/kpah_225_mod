@@ -17,9 +17,9 @@ final class class_vr implements IAction {
 		}
 		if (this.b == 19) {
 			if (class_acv.s.aG != 0) {
-				class_go.a().k(this.b);
+				GameService.a().k(this.b);
 				class_acv.s.q.F();
-				class_go.a().j();
+				GameService.a().j();
 			} else {
 				class_acv.a("Không thể sử dụng trong làng.");
 			}

@@ -30,7 +30,7 @@ public final class class_dp extends class_bg {
 
 	public final void a() {
 		if (this.b != null) {
-			this.c = class_abj.ap.nextInt(this.b.size());
+			this.c = MapScreen.ap.nextInt(this.b.size());
 			this.m = (this.c * class_aae.d - (class_aae.d << 1));
 			if (this.m < 0) {
 				this.m = 0;
@@ -50,7 +50,7 @@ public final class class_dp extends class_bg {
 			class_s class_s = (class_s) paramVector.elementAt(i);
 			System.out.println(class_s.a);
 			if (class_s.a.equalsIgnoreCase("Mời party")) {
-				final class_abj class_abj = class_acv.s;
+				final MapScreen class_abj = class_acv.s;
 //				paramVector.insertElementAt(new class_s("Advanced", new IAction() {
 //					public void perform() {
 //						Vector vector = new Vector();

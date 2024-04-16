@@ -15,7 +15,7 @@ public class Paint {
 		DrawConfig paintConfig = ModController.globalConfig.drawConfig;
 
 		if (class_acv.q == class_acv.s) {
-			int xPos = class_abj.O.getHeight() - 9 + 12;
+			int xPos = MapScreen.O.getHeight() - 9 + 12;
 			if (paintConfig.isDrawUserId) {
 				class_d.b.a(_graphics, "ID: " + MainCharInfo.getPlayerName(), 1, xPos += 12, 0);
 			}

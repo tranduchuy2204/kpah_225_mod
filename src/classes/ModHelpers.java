@@ -12,7 +12,7 @@ package classes;
 public class ModHelpers {
 
 	public static String getMapNameAndPosition() {
-		return class_abj.a + "  " + class_acv.s.q.cK / 16 + ":" + class_acv.s.q.cL / 16;
+		return MapScreen.a + "  " + class_acv.s.q.cK / 16 + ":" + class_acv.s.q.cL / 16;
 	}
 
 	public static String getOnOffStatus(boolean boo) {

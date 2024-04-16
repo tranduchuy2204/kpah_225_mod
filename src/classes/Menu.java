@@ -81,12 +81,12 @@ public class Menu {
 				Vector vector = new Vector();
 				vector.addElement(new class_s("Hợp BXH", new IAction() {
 					public void perform() {
-						class_go.a().a(-11, (byte) 0, 4);
+						GameService.a().a(-11, (byte) 0, 4);
 					}
 				}));
 				vector.addElement(new class_s("Sự kiện", new IAction() {
 					public void perform() {
-						class_go.a().l(-49);
+						GameService.a().l(-49);
 					}
 				}));
 				vector.addElement(new class_s("Trên thành", new IAction() {
@@ -157,8 +157,8 @@ public class Menu {
 				new Thread(new Runnable() {
 					public void run() {
 						while (ModController.isActiveAutoChat) {
-							class_abj.a(class_acv.s.q, autoChat.content, 100);
-							class_go.a().a(autoChat.content);
+							MapScreen.a(class_acv.s.q, autoChat.content, 100);
+							GameService.a().a(autoChat.content);
 							try {
 								Thread.sleep(5000);
 							} catch (InterruptedException ex) {

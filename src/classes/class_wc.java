@@ -280,7 +280,7 @@ public final class class_wc extends class_aae {
 			}
 			if (this.e == 7) {
 				class_acv.s.d();
-				class_go.a().l(5, 0);
+				GameService.a().l(5, 0);
 				return;
 			}
 			break;
@@ -327,11 +327,11 @@ public final class class_wc extends class_aae {
 			class_acv.s.d();
 			class_acv.h();
 			if (((class_vh) class_acv.s.q).cH == -1) {
-				class_go.a().k();
+				GameService.a().k();
 				return;
 			}
-			class_go.a().t(0);
-			class_abj.a(0, false, new byte[] { 27 });
+			GameService.a().t(0);
+			MapScreen.a(0, false, new byte[] { 27 });
 			class_acv.h();
 			return;
 		}
@@ -344,7 +344,7 @@ public final class class_wc extends class_aae {
 			}
 			if (this.e == 1) {
 				class_acv.s.d();
-				final class_abj s = class_acv.s;
+				final MapScreen s = class_acv.s;
 				++s.p;
 				if (class_acv.s.p > 2) {
 					class_acv.s.p = 0;
@@ -372,7 +372,7 @@ public final class class_wc extends class_aae {
 				} else {
 					if (this.e == 7) {
 						class_acv.h();
-						class_go.a().b((int) ((class_vh) class_acv.s.q).cH, (byte) 0);
+						GameService.a().b((int) ((class_vh) class_acv.s.q).cH, (byte) 0);
 						return;
 					}
 					break;
@@ -395,12 +395,12 @@ public final class class_wc extends class_aae {
 				return;
 			}
 			if (this.e == 6) {
-				class_go.a().l(4, 0);
+				GameService.a().l(4, 0);
 				return;
 			}
 			if (this.e == 7) {
 				class_acv.h();
-				class_go.a().n((int) ((class_vh) class_acv.s.q).cH);
+				GameService.a().n((int) ((class_vh) class_acv.s.q).cH);
 				return;
 			}
 			break;
@@ -430,12 +430,12 @@ public final class class_wc extends class_aae {
 				}
 				if (this.e == 6) {
 					class_acv.s.d();
-					class_go.a().l(3, 0);
+					GameService.a().l(3, 0);
 					return;
 				}
 				if (this.e == 7) {
 					class_acv.s.d();
-					class_go.a().a((String) null, (byte) 1, 0);
+					GameService.a().a((String) null, (byte) 1, 0);
 					return;
 				}
 				break;
@@ -448,7 +448,7 @@ public final class class_wc extends class_aae {
 				return;
 			}
 			if (this.e == 7) {
-				class_abj.a(0, true, new byte[] { 29, 30 });
+				MapScreen.a(0, true, new byte[] { 29, 30 });
 				return;
 			}
 			if (this.e == 2) {
@@ -456,12 +456,12 @@ public final class class_wc extends class_aae {
 				return;
 			}
 			if (this.e == 6) {
-				class_go.a().l(7, 0);
+				GameService.a().l(7, 0);
 				return;
 			}
 			if (this.e == 1) {
 				class_acv.s.t = !class_acv.s.t;
-				class_go.a().a(class_acv.s.t ? 5 : 4);
+				GameService.a().a(class_acv.s.t ? 5 : 4);
 				class_acv.s.d();
 				class_acv.a(class_acv.s.t ? "Đã tắt chức năng nhận lời mời." : "Đã bật chức năng nhận lời mời.");
 				return;
@@ -520,7 +520,7 @@ public final class class_wc extends class_aae {
 			if (this.e == 1) {
 				class_acv.I.d();
 				class_acv.I.g = true;
-				class_acv.I.l = class_abj.ao;
+				class_acv.I.l = MapScreen.ao;
 				class_acv.I.f();
 				return;
 			}
@@ -528,7 +528,7 @@ public final class class_wc extends class_aae {
 		}
 		case 8: {
 			if (this.e == 2) {
-				class_go.a().h();
+				GameService.a().h();
 				return;
 			}
 			if (((class_vh) class_acv.s.q).cH == -1) {

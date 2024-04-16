@@ -22,7 +22,7 @@ public class ModController {
 	public static long refeshTime = 0;
 
 	public static void update() {
-		class_abj.as = 100;
+//		MapScreen.as = 100;
 		doAutoGame();
 	}
 
@@ -31,8 +31,8 @@ public class ModController {
 			refeshTime = ModHelpers.currentTime();
 			if (globalConfig.isAutoCayThan) {
 				for (int i = 0; i < 8; i++) {
-					class_go.a().n(i, 2);
-					class_go.a().n(i, 3);
+					GameService.a().n(i, 2);
+					GameService.a().n(i, 3);
 				}
 			}
 			if (globalConfig.isAutoRemoveDa) {
@@ -49,24 +49,24 @@ public class ModController {
 	 */
 	private static void doRemoveStone() {
 		for (int i = 159; i <= 174; i++) {
-			class_go.a().a((short) i, 0, (byte) 0);
+			GameService.a().a((short) i, 0, (byte) 0);
 		}
 		for (int i = 179; i <= 226; i++) {
-			class_go.a().a((short) i, 0, (byte) 0);
+			GameService.a().a((short) i, 0, (byte) 0);
 		}
 	}
 
 	private static void doRemoveTranh() {
 		for (int i = 15; i <= 23; i++) {
-			class_go.a().a((short) i, 0, (byte) 0);
+			GameService.a().a((short) i, 0, (byte) 0);
 		}
 		for (int i = 28; i <= 45; i++) {
-			class_go.a().a((short) i, 0, (byte) 0);
+			GameService.a().a((short) i, 0, (byte) 0);
 		}
-		class_go.a().a((short) 12, 0, (byte) 0);
-		class_go.a().a((short) 13, 0, (byte) 0);
-		class_go.a().a((short) 58, 0, (byte) 0);
-		class_go.a().a((short) 59, 0, (byte) 0);
+		GameService.a().a((short) 12, 0, (byte) 0);
+		GameService.a().a((short) 13, 0, (byte) 0);
+		GameService.a().a((short) 58, 0, (byte) 0);
+		GameService.a().a((short) 59, 0, (byte) 0);
 	}
 
 	public void calCharactorLevelUp() {

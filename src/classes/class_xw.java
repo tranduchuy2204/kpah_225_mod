@@ -94,7 +94,7 @@ public final class class_xw extends class_aae {
 	}
 
 	private void onLoadData() {
-
+		AccountManager.getInstance().loadByRecord();
 	}
 
 	public void getCurrentAccount() {
@@ -164,7 +164,7 @@ public final class class_xw extends class_aae {
 		} else {
 			class_acv.b("Đang đăng ký", true);
 		}
-		class_go.a().a(this.a.e().toLowerCase(), this.b.e());
+		GameService.a().a(this.a.e().toLowerCase(), this.b.e());
 	}
 
 	public final boolean a(final int n) {
@@ -271,8 +271,8 @@ public final class class_xw extends class_aae {
 		}
 		this.l = class_yg.b(this.q) * this.p >> 10;
 		this.m = class_yg.a(this.q) * this.p >> 10;
-		class_abj.h = this.l + this.n;
-		class_abj.i = this.m + this.o;
+		MapScreen.h = this.l + this.n;
+		MapScreen.i = this.m + this.o;
 		class_acv.s.g();
 	}
 
