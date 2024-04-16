@@ -7,7 +7,7 @@ import utility.StringUtils;
 /*
  * Class này để in ấn , hiển thị các thông tin
  */
-public class Paint {
+public class Paint { 
 
 	public static void onPaint(Graphics _graphics) {
 		// Kiểm tra màn hình, nếu ở màn hình GameScreen thì mới hiện thị

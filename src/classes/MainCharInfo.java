@@ -17,7 +17,7 @@ public class MainCharInfo {
 	}
 
 	public static int getCurrentGold() {
-		return class_acv.s.q.aV;
+		return class_acv.s.q.aV; 
 	}
 
 	public static int getCurrentLockGold() {
