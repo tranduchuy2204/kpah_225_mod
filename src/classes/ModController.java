@@ -22,7 +22,7 @@ public class ModController {
 	public static long refeshTime = 0;
 
 	public static void update() {
-		class_abj.as = 100;
+//		class_abj.as = 100;
 		doAutoGame();
 	}
 
