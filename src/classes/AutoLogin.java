@@ -12,6 +12,5 @@ public interface AutoLogin {
 	void onLoginSuccess();
 
 	void waitFor(int seccond);
-	
 
 }
