@@ -54,6 +54,30 @@ public class Menu {
 
 	public void specialMenu() {
 		Vector vector = new Vector();
+//		vector.addElement(new class_s("Get All Users", new IAction() {
+//
+//			public void perform() {
+//				Vector actor = class_acv.s.l;
+//				for (int i = actor.size() - 1; i >= 0; --i) {
+//					final class_vh class_vh;
+//					if ((class_vh = (class_vh) actor.elementAt(i)).cF == 0) {
+//						class_hw user = (class_hw) class_vh;
+//						boolean isNpc = user.d_();
+//						if (!isNpc) {
+//							System.out.println("UserName: " + user.a_());
+//							System.out.println("Effect: " + user.T);
+//						}
+//
+////						Vector dynamicEffects = user.T;
+////						for (int j = 0; j < dynamicEffects.size(); j++) {
+////							class_acc dynamic = (class_acc) dynamicEffects.elementAt(j);
+////							
+////						}
+//					}
+//				}
+//			}
+//		}));
+
 		vector.addElement(new class_s("Quick Action", new IAction() {
 			public void perform() {
 				Vector quickActionMenu = new Vector();
@@ -81,12 +105,12 @@ public class Menu {
 				Vector vector = new Vector();
 				vector.addElement(new class_s("Hợp BXH", new IAction() {
 					public void perform() {
-						GameService.a().a(-11, (byte) 0, 4);
+						class_go.a().a(-11, (byte) 0, 4);
 					}
 				}));
 				vector.addElement(new class_s("Sự kiện", new IAction() {
 					public void perform() {
-						GameService.a().l(-49);
+						class_go.a().l(-49);
 					}
 				}));
 				vector.addElement(new class_s("Trên thành", new IAction() {
@@ -157,8 +181,8 @@ public class Menu {
 				new Thread(new Runnable() {
 					public void run() {
 						while (ModController.isActiveAutoChat) {
-							MapScreen.a(class_acv.s.q, autoChat.content, 100);
-							GameService.a().a(autoChat.content);
+							class_abj.a(class_acv.s.q, autoChat.content, 100);
+							class_go.a().a(autoChat.content);
 							try {
 								Thread.sleep(5000);
 							} catch (InterruptedException ex) {
